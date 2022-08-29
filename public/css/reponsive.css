@@ -1,0 +1,330 @@
+@media (min-width: 320px) and (max-width: 1199px) {
+  .heading h2 {
+    font-size: 30px;
+  }
+  .heading p {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .section-w-2 h3.t, .section-w-1 h3.t {
+    font-size: 25px;
+  }
+  .section-w-2 h2.t, .section-w-1 h2.t {
+    font-size: 30px;
+  }
+  .section-w-2 p.t, .section-w-1 p.t {
+    font-size: 15px;
+  }
+
+  #header .slider {
+    margin: 67.3px 0 0 0;
+  }
+  #header.header2 {
+    height: 67.3px;
+  }
+  #header.active::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+  }
+  #header.active .navbar {
+    height: 100%;
+  }
+  #header .navbar {
+    padding: 0 !important;
+    position: fixed;
+    z-index: 6;
+  }
+  #header .navbar .navbar-toggler {
+    background: #2B2B2B;
+    border-radius: 0;
+    position: absolute;
+    top: 0;
+  }
+  #header .navbar .navbar-toggler {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0.5rem 1.5rem;
+  }
+  #header .navbar .navbar-toggler .navbar-brand {
+    margin-right: -45px;
+  }
+  #header .navbar .navbar-collapse {
+    background: #EEDBAB;
+    width: 80%;
+    position: absolute;
+    top: 67.3px;
+    height: 100%;
+  }
+  #header .navbar .navbar-collapse.show .navbar-brand, #header .navbar .navbar-collapse.show .list-icon {
+    display: none;
+  }
+  #header .navbar .navbar-collapse.show .navbar-nav {
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+  }
+  #header .navbar .navbar-collapse.show .navbar-nav .nav-item:hover {
+    background: #444444;
+  }
+  #header .navbar .navbar-collapse.show .navbar-nav .nav-item:hover a {
+    color: #fff;
+  }
+  #header .navbar .navbar-collapse.show .navbar-nav .nav-item a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #5F5F5F;
+    text-transform: uppercase;
+  }
+  #header .navbar .navbar-collapse.show span.close {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: -40px;
+    cursor: pointer;
+  }
+  #header .navbar .container {
+    padding: 0;
+    display: block;
+    max-width: 100%;
+  }
+  #header .list-icon .icon {
+    width: auto;
+    height: auto;
+  }
+
+  .section-3 .nav {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    overflow-x: scroll;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .section-3 .col-lg-4 .card .card-body h3 {
+    font-size: 30px;
+  }
+  .section-3 .owl-nav {
+    position: unset;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 3rem;
+  }
+
+  .section-map .info, .section-map .map {
+    width: 100%;
+  }
+  .section-map .info {
+    background-size: 100% 100%;
+  }
+
+  #footer {
+    background-size: 100% 100%;
+  }
+
+  #top.active {
+    right: 10px;
+  }
+
+  .section-blog .nav {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+  .section-blog .nav li {
+    white-space: nowrap;
+  }
+
+  .section-14 .img .img1, .section-14 .img .img2 {
+    padding: 1rem;
+  }
+  .section-14 .img .img2 {
+    top: 10px;
+    left: 10px;
+  }
+
+  .section-5, .section-6, .section-7, .section-8, .section-9 {
+    background: none;
+    min-height: auto;
+  }
+
+  .style1_product_detail .container {
+    padding: 0;
+  }
+  .style1_product_detail .block1, .style1_product_detail .block2 {
+    position: unset;
+    width: 100%;
+  }
+  .style1_product_detail .card h4 {
+    font-size: 35px;
+    font-weight: 600;
+    color: #E95299;
+  }
+  .style1_product_detail .card p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #333333;
+  }
+
+  .section-11 .more {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding: 0;
+  }
+
+  .section-12 p {
+    margin: 0;
+  }
+
+  .section-13 .row {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+
+  .section-w-2 a.more {
+    color: #0180C7;
+  }
+
+  .line {
+    height: 7px;
+    background: #E95299;
+  }
+
+  .card-body {
+    padding: 0;
+  }
+
+  .section-16 .item .card-body {
+    padding: 0 0 0 1rem;
+  }
+
+  .section-review h2 {
+    font-size: 35px;
+  }
+
+  .section-review .block-3 {
+    width: 100%;
+  }
+  .section-review .block-2 .bg-line .bg-1 {
+    width: 95px;
+  }
+
+  #header2 h2 {
+    font-size: 15px;
+  }
+  #header2 ul li .img {
+    margin-right: 0;
+  }
+  #header2 ul li.active::after {
+    width: 20px;
+    margin: 0 12px;
+  }
+
+  .stylett .style1 .input {
+    margin-bottom: 20px;
+  }
+  .stylett .style1 .box2 .input-column3:nth-child(1), .stylett .style1 .box2 .input-column3:nth-child(2), .stylett .style1 .box2 .input-column3:nth-child(3) {
+    width: 100%;
+  }
+
+  .phuongthucthanhtoan .box {
+    margin: 0 -2%;
+  }
+  .phuongthucthanhtoan .box .item {
+    margin: 2%;
+    width: 46%;
+    float: left;
+  }
+
+  .diachinhanhang .content2 .boxship2 .box2 {
+    padding-left: 0;
+  }
+  .diachinhanhang .content2 .boxship2 .input-column2 {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .diachinhanhang .boxchoose {
+    padding: 12px;
+  }
+  .diachinhanhang .boxchoose ul li {
+    margin: 3px 0;
+  }
+  .diachinhanhang .boxchoose ul li a {
+    font-size: 14px;
+  }
+
+  .ghichudonhang .box2 {
+    margin: 20px 0 0 0;
+  }
+
+  .thongtinxuathoadon .input-column2 {
+    width: 100%;
+  }
+
+  .section-magic .block1 .item, .section-magic .block2 .item {
+    position: unset;
+  }
+  .section-magic .container {
+    padding: 0;
+  }
+  .section-magic .card h4 {
+    font-size: 35px;
+    font-weight: 600;
+    color: #E95299;
+    text-align: left;
+  }
+  .section-magic .card p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #333333;
+    text-align: left;
+  }
+}
+@media (max-width: 767px) {
+  .section-1 .row {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+
+  .section-14 p.t {
+    width: 100%;
+  }
+
+  .section-review .block-1 button {
+    width: 100%;
+  }
+  .section-review .block-1 span.number {
+    font-size: 40px;
+  }
+  .section-review .block-1 .star img {
+    width: 40px;
+  }
+  .section-review .block-5 .danhgia .img img {
+    width: 50%;
+  }
+
+  .addaddress, .editaddress {
+    width: calc(100% - 2rem);
+    margin: 1rem;
+  }
+  .addaddress h2, .editaddress h2 {
+    font-size: 16px;
+  }
+
+  .section-cart {
+    width: 100%;
+  }
+}

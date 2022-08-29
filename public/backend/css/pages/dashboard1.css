@@ -1,0 +1,129 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+/*Theme Colors*/
+/**
+ * Table Of Content
+ *
+ * 	1. Color system
+ *	2. Options
+ *	3. Body
+ *	4. Typography
+ *	5. Breadcrumbs
+ *	6. Cards
+ *	7. Dropdowns
+ *	8. Buttons
+ *	9. Typography
+ *	10. Progress bars
+ *	11. Tables
+ *	12. Forms
+ *	14. Component
+ */
+/*******************
+ Our income
+*******************/
+.cmin-height {
+  height: 105px;
+}
+.previewPhoto{
+	margin-top: 20px;
+}
+.box-album{
+	width: 100%;
+	margin-top: 20px;
+	display: inline-flex;
+}
+.box-album .form-setup{
+	width: 70%;
+	margin-bottom: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.box-album .remove_button{
+	margin-top: 20px;
+}
+.form-setup{
+    padding: .375rem .75rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #e9ecef;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	margin-bottom: 5px;
+}
+#image_file{
+	position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    font-size: 200px;
+    direction: ltr;
+    cursor: pointer;
+}
+.check-up-image{
+    border: #e3e3e3 1px solid;
+	padding: 20px 10px;
+    float: left;
+    margin-right: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+#drawimageupload{
+	padding-right: 10px;
+    padding-left: 10px;
+}
+.deleteupload{
+	margin-top:10px;
+	cursor: pointer;
+}
+.jq-toast-wrap{
+	display: none;
+}
+.form-search .form-group {
+    display: inline-flex;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.form-search .form-group label {
+    margin-right: 10px;
+}
+.check-up-image img {
+	height: 100px;
+}
+.center{
+	text-align: center;
+}
+img.anhien{
+	cursor: pointer;
+}
+#thongbao-m{
+	padding: 0px 50px 0px 0px;
+    position: fixed;
+    right: 24px;
+    bottom: 0px;
+    display: none;
+    min-width: 500px;
+	background: #e0f2cb;
+}
+div#thongbao {
+    color: #6DA827;
+    margin: 0px 0px 5px 0px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 35px;
+    height: 26px;
+    padding: 0 0 0 20px;
+}
+.nav-link, .navbar {
+    padding-left: 0px;
+}
+.vtabs {
+    width: 100%;
+}
+.vtabs .tabs-vertical {
+    width: 170px !important;
+}
+.top-padding-0{
+	padding-top: 0px !important;
+}

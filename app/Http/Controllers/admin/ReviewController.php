@@ -19,6 +19,6 @@ class ReviewController extends Controller
 	public function getDeleteReview(Request $request){
 		$id = $request->id;
 		DB::table('review')->where('review_id', $id)->delete();
-		return redirect('dt-admin/review');
+		return redirect('dt-admin/review', 301);
 	}
 }

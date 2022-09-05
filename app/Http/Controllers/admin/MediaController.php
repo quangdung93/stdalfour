@@ -62,7 +62,7 @@ class MediaController extends Controller
 	public function getDeleteMedia(Request $request){
 		$id = $request->id;
 		DB::table('media')->where('media_id', $id)->delete();
-		return redirect('dt-admin/media');
+		return redirect('dt-admin/media', 301);
 	}
 	public function postUpload(Request $request){
 		$image_code = array();

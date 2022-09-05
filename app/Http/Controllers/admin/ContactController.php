@@ -18,6 +18,6 @@ class ContactController extends Controller
 	public function getDeleteContact(Request $request){
 		$id = $request->id;
 		DB::table('contact')->where('contact_id', $id)->delete();
-		return redirect('dt-admin/contact');
+		return redirect('dt-admin/contact', 301);
 	}
 }

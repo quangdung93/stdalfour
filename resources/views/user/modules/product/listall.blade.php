@@ -16,27 +16,4 @@
       </div>
     </div>
   </div>
-  <div class="section-map pt-5 pb-5">
-    <div class="container">
-      <div class="d-flex content">
-        <div class="info py-4 px-4">
-          <div class="inn">
-            <div class="d-flex align-items-center mb-3">
-              <div class="icon"><img src="img/home/icon-3.svg" alt=""></div>
-              <div class="title"><a href="tel:0906947824">0906947824</a></div>
-            </div>
-            <div class="d-flex align-items-center mb-3">
-              <div class="icon"><img src="img/home/icon-4.svg" alt=""></div>
-              <div class="title"><span>contact-us</span></div>
-            </div>
-            <div class="d-flex align-items-center mb-3">
-              <div class="icon"><img src="img/home/icon-5.svg" alt=""></div>
-              <div class="title"><span>24953 Paseo De Valencia, #6c, Laguna Hills, Ca 92653</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="map"><img class="img-fluid" src="img/home/map-1.png" alt="map"></div>
-      </div>
-    </div>
-  </div>
 @endsection

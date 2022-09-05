@@ -1,30 +1,35 @@
 $(document).ready(function () {
+    var widthScreen = $(window).width();
 	var slider = $('.slider');
 	slider.owlCarousel({
 		items: 1,
 		nav: false,
 		autoplay: true
 	});
-    var block2 = $('.section-2 .owl-carousel');
-	block2.owlCarousel({
-		items: 4,
-		nav: false,
-        dots: true,
-		autoplay: true,
-        margin:24,
-        responsive:{
-            0:{
-                dots: false,
-                items:1.5
-            },
-            768:{
-                items:3
-            },
-            1200:{
-                items:4
+    var block2 = $('.section-2 .slides-custom');
+
+    if(widthScreen > 768){
+        block2.owlCarousel({
+            items: 4,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            margin:24,
+            responsive:{
+                0:{
+                    dots: false,
+                    items:1.5
+                },
+                768:{
+                    items:3
+                },
+                1200:{
+                    items:4
+                }
             }
-        }
-	});
+        });
+    }
+
     var block3 = $('.section-3 .owl-carousel');
 	block3.owlCarousel({
         margin: 24,
@@ -43,26 +48,29 @@ $(document).ready(function () {
             }
         }
 	});
+    
     var block4 = $('.section-4 .owl-carousel');
-	block4.owlCarousel({
-		items: 3,
-		nav: false,
-        dots: true,
-		autoplay: true,
-        margin:24,
-        responsive:{
-            0:{
-                dots: false,
-                items:1.5
-            },
-            600:{
-                items:3
-            },
-            1000:{
-                items:3
+    if(widthScreen > 768){
+        block4.owlCarousel({
+            items: 3,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            margin:24,
+            responsive:{
+                0:{
+                    dots: false,
+                    items:1.5
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:3
+                }
             }
-        }
-	});
+        });
+    }
     var block5 = $('.section-review .owl-carousel');
 	block5.owlCarousel({
         margin: 24,

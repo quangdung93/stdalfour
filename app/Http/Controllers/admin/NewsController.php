@@ -123,6 +123,6 @@ class NewsController extends Controller
 		$id = $request->id;
 		DB::table('news')->where('ID', $id)->delete();
 		DB::table('news_detail')->where('NEWSID', $id)->delete();
-		return redirect('dt-admin/news');
+		return redirect('dt-admin/news', 301);
 	}
 }

@@ -100,6 +100,7 @@ Route::group(['namespace' => 'admin'], function () {
 
 Route::group(['namespace' => 'user'], function () {
     Route::get('/', 'HomeController@getHome')->name('frontend.home');
+	Route::get('{type}-sitemap.xml', 'SitemapController@sitemap');
 	Route::get("/tin-tuc",'NewsController@getNews')->name('frontend.news');
 	Route::get("/tin-tuc/{urlpost}",'NewsController@getDetail')->name('frontend.news.detail');
 	Route::get("/san-pham",'CategoryController@getAllProductList')->name('frontend.sanpham.list');

@@ -1,5 +1,15 @@
 @extends('user.layout.master')
 @section('content')
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <ul class="breadcrumbs">
+          <li>Trang chủ</li>
+          <li>/ Sản phẩm</li>
+        </ul>
+      </div>
+    </div>
+  </div>
   @if($product->ORIGIN)
 	{!! $product->ORIGIN !!}
   @endif
@@ -95,7 +105,7 @@
       <div class="text-center">
         <h2 class="mb-5">We got glowing reviews</h2>
       </div>
-      <div class="d-flex">
+      <div class="d-flex content">
         <div class="block-1 pe-5">
           <div class="d-flex mb-5"><span class="number">4.8</span>
             <div class="d-block">
@@ -104,7 +114,7 @@
           </div>
           <button class="text-uppercase">Gửi đánh giá và bình luận</button>
         </div>
-        <div class="block-2"> 
+        <div class="block-2 mt-2"> 
           <div class="d-flex align-items-center mb-2">
             <div class="star"><img src="/img/detail/icon2.svg" alt=""><img src="/img/detail/icon2.svg" alt=""><img src="/img/detail/icon2.svg" alt=""><img src="/img/detail/icon2.svg" alt=""><img src="/img/detail/icon2.svg" alt=""></div>
             <div class="bg-line">
@@ -143,7 +153,7 @@
         </div>
       </div>
       <div class="block-3 pt-5">
-        <div class="d-flex mb-3"><span>Bạn  thấy sản phẩm như thế nào ?<br>(Chọn sao nhé)</span>
+        <div class="mb-2"><span>Bạn  thấy sản phẩm như thế nào ?<br>(Chọn sao nhé)</span>
           <div class="star"><span></span><span></span><span></span><span></span><span></span></div>
         </div>
         <form class="form" action="#">

@@ -90,7 +90,7 @@ class OrderController extends Controller
 						}
 					}
 				}
-				return redirect('dt-admin/order/sua/'.$order_id)->with('success', 'Bạn đã thêm đơn hàng thành công');
+				return redirect('dt-admin/order/sua/'.$order_id, 301)->with('success', 'Bạn đã thêm đơn hàng thành công');
 			}
 		}
 	}
@@ -115,12 +115,12 @@ class OrderController extends Controller
 		$order->shipping_method = $request->order_method;
 		$order->NOTE = $request->order_note ? $request->order_note : '';
 		$order->save();
-		return redirect('dt-admin/order')->with('sucsses', 'Bạn đã cập nhật đơn hàng thành công');
+		return redirect('dt-admin/order', 301)->with('sucsses', 'Bạn đã cập nhật đơn hàng thành công');
 	}
 	public function getDeleteServices(Request $request){
 		$id = $request->id;
 		DB::table('services')->where('services_id', $id)->delete();
-		return redirect('dt-admin/services')->with('sucsses', 'Bạn đã xóa services thành công');
+		return redirect('dt-admin/services', 301)->with('sucsses', 'Bạn đã xóa services thành công');
 	}
 	public function addOrderPro(Request $request){
 		$id = $request->idorder;

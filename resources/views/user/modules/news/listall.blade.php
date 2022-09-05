@@ -22,8 +22,11 @@
 		  @foreach($news as $tin)
             <div class="col-lg-4">
               <div class="card">
-                <div class="card-body"><img class="mb-3 img-fluid" src="{{ $tin->IMAGE }}" alt="">
-                  <h4 class="card-title">{{ $tin->NAME }}</h4>
+                <div class="card-body">
+                  <a href="/tin-tuc/{{ Custom::get_url_alias('news_id='.$tin->NEWSID) }}">
+                  <img class="mb-3 img-fluid" src="{{ $tin->IMAGE }}" alt="">
+                  </a>
+                  <a class="text-link" href="/tin-tuc/{{ Custom::get_url_alias('news_id='.$tin->NEWSID) }}"><h4 class="card-title">{{ $tin->NAME }}</h4></a>
                   <p>{{ $tin->SUMMARY }}</p>
 				  <p><a href="/tin-tuc/{{ Custom::get_url_alias('news_id='.$tin->NEWSID) }}">read more</a></p>
                   <div class="d-flex align-items-center justify-content-between">

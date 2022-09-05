@@ -113,6 +113,6 @@ class CategoryController extends Controller
 		$id = $request->id;
 		DB::table('category')->where('ID', $id)->delete();
 		DB::table('category_detail')->where('CATEGORYID', $id)->delete();
-		return redirect('dt-admin/category');
+		return redirect('dt-admin/category', 301);
 	}
 }

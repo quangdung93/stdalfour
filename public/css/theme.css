@@ -404,7 +404,13 @@ body {
   font-weight: 400;
   text-transform: uppercase;
 }
-.section-4 .card .card-body a {
+
+a.text-link{
+  color: #282828;
+  text-decoration: none;
+}
+
+.section-4 .card .card-body a.btn-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2581,4 +2587,22 @@ body {
 }
 .addaddress h2 img, .editaddress h2 img {
   margin-right: 10px;
+}
+
+ul.breadcrumbs{
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+    margin: 0;
+    list-style: none;
+    font-size: 1.4rem;
+}
+
+ul.breadcrumbs li{
+    position: relative;
+    margin-left: 5px;
+    color: #8e8e8e;
+    font-size: inherit;
+    font-weight: 400;
+    font-size: 15px
 }

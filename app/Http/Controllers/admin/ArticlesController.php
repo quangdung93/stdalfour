@@ -111,6 +111,6 @@ class ArticlesController extends Controller
 	public function getDeleteTerm(Request $request){
 		$id = $request->id;
 		DB::table('term')->where('term_id', $id)->delete();
-		return redirect('dt-admin/term');
+		return redirect('dt-admin/term', 301);
 	}
 }

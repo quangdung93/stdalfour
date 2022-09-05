@@ -16,7 +16,7 @@ class DashboardController extends Controller
 		if($userAdId){
             return view('admin.modules.dashboar.admin');
         }else {
-            return redirect('dt-login');
+            return redirect('dt-login', 301);
         }
     }
 }

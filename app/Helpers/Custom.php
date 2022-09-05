@@ -22,7 +22,7 @@ class Custom{
 			$datauser = memberModel::where('iduser',Cookie::get('userAdId'))->first();
 			return $datauser;
 		}else{
-			return redirect('dt-login');
+			return redirect('dt-login', 301);
 		}
 	}
 	public static function get_url_alias($loai){

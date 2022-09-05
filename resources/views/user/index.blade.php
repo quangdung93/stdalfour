@@ -31,13 +31,13 @@
 			<h2>THIS MONTH’S CURATION</h2>
 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
 		  </div>
-		  <div class="owl-carousel owl-theme style1_dots">
-			@foreach ($pic_thumb_array as $pic_thumb_array_val)
-			<div class="item">
-				<a class="card d-block" href="javascript:;"><img class="w-100" src="{{ '/images/services/'.$pic_thumb_array_val }}" alt="image">
-					<div class="card-body"><img src="/img/home/icon-11.svg" alt="image"></div></a>
-			</div>
-			@endforeach
+		  <div class="slides-custom owl-carousel owl-theme style1_dots">
+          @foreach ($pic_thumb_array as $pic_thumb_array_val)
+          <div class="item">
+            <a class="card d-block" href="javascript:;"><img class="w-100" src="{{ '/images/services/'.$pic_thumb_array_val }}" alt="image">
+              <div class="card-body"><img src="/img/home/icon-11.svg" alt="image"></div></a>
+          </div>
+          @endforeach
 		  </div>
 		</div>
 	  </div>
@@ -173,12 +173,16 @@
       <div class="heading pb-4">
         <h2>Blog</h2>
       </div>
-      <div class="owl-carousel owl-theme style1_dots">
+      <div class="slides-custom owl-carousel owl-theme style1_dots">
 		@foreach($news as $tin)
         <div class="item">
-          <div class="card"><img class="w-100 mb-4" src="{{ $tin->IMAGE }}" alt="image">
+          <div class="card">
+            <a href="/tin-tuc/{{ Custom::get_url_alias('news_id='.$tin->NEWSID) }}">
+            <img class="w-100 mb-4" src="{{ $tin->IMAGE }}" alt="image">
+            </a>
             <div class="card-body">
-              <h4 class="card-title mb-4">{{ $tin->NAME }}</h4><a href="/tin-tuc/{{ Custom::get_url_alias('news_id='.$tin->NEWSID) }}">read more</a>
+              <a class="text-link" href="/tin-tuc/{{ Custom::get_url_alias('news_id='.$tin->NEWSID) }}"><h4 class="card-title mb-4">{{ $tin->NAME }}</h4></a>
+              <a class="btn-link" href="/tin-tuc/{{ Custom::get_url_alias('news_id='.$tin->NEWSID) }}">read more</a>
             </div>
           </div>
         </div>

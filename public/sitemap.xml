@@ -1,0 +1,18 @@
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <sitemap>
+        <loc>https://stdalfour.com.vn/post-sitemap.xml</loc>
+        <lastmod>2021-08-02</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://stdalfour.com.vn/page-sitemap.xml</loc>
+        <lastmod>2021-08-02</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://stdalfour.com.vn/category-sitemap.xml</loc>
+        <lastmod>2021-08-02</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://stdalfour.com.vn/product-sitemap.xml</loc>
+        <lastmod>2021-08-02</lastmod>
+    </sitemap>
+</sitemapindex>

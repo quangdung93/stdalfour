@@ -293,6 +293,36 @@
   }
 }
 @media (max-width: 767px) {
+  .slides-custom{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px;
+  }
+  
+  .slides-custom .item{
+    width: 70%;
+    overflow: hidden;
+    min-width: 70%;
+    margin-right: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 1px 0 #ccc;
+  }
+
+  .section-magic .content img {
+    max-width: 100%!important;
+    height: auto!important;
+  }
+
+  .seciton-introduce .content img {
+    max-width: 100%!important;
+    height: auto!important;
+  }
+
+  .section-review .content{
+    flex-direction: column;
+  }
+
   .section-1 .row {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;

@@ -8,7 +8,9 @@
       </div>
       <div class="row style1_product pt-3">
 	  @foreach($productcat as $km)
-        <div class="col-lg-4"><a class="item mb-4 text-center d-block" href="{{ route('frontend.category.detail', ['urlpost' => Custom::get_url_alias('product_id='.$km->PRODUCTID)]) }}"><img class="img-fluid" src="{{ $km->IMAGE }}" alt="">
+        <div class="col-lg-4">
+          <a class="item mb-4 text-center d-block" href="{{ route('frontend.category.detail', ['urlpost' => Custom::get_url_alias('product_id='.$km->PRODUCTID)]) }}">
+            <img class="img-fluid lazy" data-src="{{ $km->IMAGE }}" alt="">
             <div class="body">
               <h4 class="product-title">{{ $km->NAME }}</h4>
             </div></a></div>

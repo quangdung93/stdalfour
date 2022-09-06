@@ -24,16 +24,16 @@
               <div class="card">
                 <div class="card-body">
                   <a href="/tin-tuc/{{ Custom::get_url_alias('news_id='.$tin->NEWSID) }}">
-                  <img class="mb-3 img-fluid" src="{{ $tin->IMAGE }}" alt="">
+                    <img class="mb-3 img-fluid lazy" data-src="{{ $tin->IMAGE }}" alt="">
                   </a>
                   <a class="text-link" href="/tin-tuc/{{ Custom::get_url_alias('news_id='.$tin->NEWSID) }}"><h4 class="card-title">{{ $tin->NAME }}</h4></a>
                   <p>{{ $tin->SUMMARY }}</p>
-				  <p><a href="/tin-tuc/{{ Custom::get_url_alias('news_id='.$tin->NEWSID) }}">read more</a></p>
+				          <p><a href="/tin-tuc/{{ Custom::get_url_alias('news_id='.$tin->NEWSID) }}">read more</a></p>
                   <div class="d-flex align-items-center justify-content-between">
                     <div class="d-left d-flex align-items-center">
-                      <div class="like d-flex align-items-center"><img src="img/blog/icon1.svg" alt=""><span>4</span></div>
-                      <div class="comments d-flex align-items-center"><img src="img/blog/icon2.svg" alt=""><span>10</span></div>
-                      <div class="view d-flex align-items-center"><img src="img/blog/icon3.svg" alt=""><span>6</span></div>
+                      <div class="like d-flex align-items-center"><img class="lazy" data-src="img/blog/icon1.svg" alt=""><span>4</span></div>
+                      <div class="comments d-flex align-items-center"><img class="lazy" data-src="img/blog/icon2.svg" alt=""><span>10</span></div>
+                      <div class="view d-flex align-items-center"><img class="lazy" data-src="img/blog/icon3.svg" alt=""><span>6</span></div>
                     </div>
                     <div class="d-right">
                       <div class="share d-flex align-items-center"><img src="img/blog/icon4.svg" alt=""><span>share</span></div>

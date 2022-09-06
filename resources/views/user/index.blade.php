@@ -9,7 +9,7 @@
       <div class="row">
 		@foreach($producthot as $km)
         <div class="col-lg-4">
-          <div class="card p-5"><img class="img-fluid" src="{{ $km->IMAGE }}" alt="img">
+          <div class="card p-5"><img class="img-fluid lazy" data-src="{{ $km->IMAGE }}" alt="img">
             <div class="card-body">
               <h4 class="card-title">{{ $km->NAME }}</h4><a class="find mb-3" href="{{ route('frontend.category.detail', ['urlpost' => Custom::get_url_alias('product_id='.$km->PRODUCTID)]) }}">Find a Store near you</a><span class="size">@if($km->PRICE == 0) Liên hệ @else {{ Custom::product_price($km->PRICE) }}đ @endif</span>
             </div>
@@ -34,8 +34,8 @@
 		  <div class="slides-custom owl-carousel owl-theme style1_dots">
           @foreach ($pic_thumb_array as $pic_thumb_array_val)
           <div class="item">
-            <a class="card d-block" href="javascript:;"><img class="w-100" src="{{ '/images/services/'.$pic_thumb_array_val }}" alt="image">
-              <div class="card-body"><img src="/img/home/icon-11.svg" alt="image"></div></a>
+            <a class="card d-block" href="javascript:;"><img class="w-100 lazy" data-src="{{ '/images/services/'.$pic_thumb_array_val }}" alt="image">
+              <div class="card-body"><img class="lazy" data-src="/img/home/icon-11.svg" alt="image"></div></a>
           </div>
           @endforeach
 		  </div>
@@ -44,7 +44,7 @@
 	 @endif
   @endif
   
-  @if($tiktok)
+  @if($tiktok && $isNonGoogle)
   <div class="section-3 pt-5 pb-5">
     <div class="container">
       <div class="heading pb-4">
@@ -77,9 +77,9 @@
             </div>
             <div class="col-lg-8">
               <div class="owl-carousel owl-theme">
-			  @foreach($tiktok as $tik)
-                <div class="item"><a class="card d-block" href="/tin-tuc/{{ Custom::get_url_alias('news_id='.$tik->NEWSID) }}"><img class="w-100" src="{{ $tik->IMAGE }}" alt="image">
-                    <div class="card-body"><img src="/img/home/icon-12.svg" alt="image"></div></a></div>
+			        @foreach($tiktok as $tik)
+                <div class="item"><a class="card d-block" href="/tin-tuc/{{ Custom::get_url_alias('news_id='.$tik->NEWSID) }}"><img class="w-100 lazy" data-src="{{ $tik->IMAGE }}" alt="image">
+                    <div class="card-body"><img class="lazy" data-src="/img/home/icon-12.svg" alt="image"></div></a></div>
               @endforeach
               </div>
             </div>
@@ -97,16 +97,16 @@
             </div>
             <div class="col-lg-8">
               <div class="owl-carousel owl-theme">
-                <div class="item"><a class="card d-block" href="#"><img class="w-100" src="img/home/img8.png" alt="image">
-                    <div class="card-body"><img src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100" src="img/home/img9.png" alt="image">
-                    <div class="card-body"><img src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100" src="img/home/img8.png" alt="image">
-                    <div class="card-body"><img src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100" src="img/home/img9.png" alt="image">
-                    <div class="card-body"><img src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100" src="img/home/img8.png" alt="image">
-                    <div class="card-body"><img src="img/home/icon-12.svg" alt="image"></div></a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img8.png" alt="image">
+                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img9.png" alt="image">
+                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img8.png" alt="image">
+                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img9.png" alt="image">
+                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img8.png" alt="image">
+                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
               </div>
             </div>
           </div>
@@ -123,16 +123,16 @@
             </div>
             <div class="col-lg-8">
               <div class="owl-carousel owl-theme">
-                <div class="item"><a class="card d-block" href="#"><img class="w-100" src="img/home/img8.png" alt="image">
-                    <div class="card-body"><img src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100" src="img/home/img9.png" alt="image">
-                    <div class="card-body"><img src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100" src="img/home/img8.png" alt="image">
-                    <div class="card-body"><img src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100" src="img/home/img9.png" alt="image">
-                    <div class="card-body"><img src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100" src="img/home/img8.png" alt="image">
-                    <div class="card-body"><img src="img/home/icon-12.svg" alt="image"></div></a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img8.png" alt="image">
+                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img9.png" alt="image">
+                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img8.png" alt="image">
+                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img9.png" alt="image">
+                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img8.png" alt="image">
+                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
               </div>
             </div>
           </div>
@@ -149,16 +149,16 @@
             </div>
             <div class="col-lg-8">
               <div class="owl-carousel owl-theme">
-                <div class="item"><a class="card d-block" href="#"><img class="w-100" src="img/home/img8.png" alt="image">
-                    <div class="card-body"><img src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100" src="img/home/img9.png" alt="image">
-                    <div class="card-body"><img src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100" src="img/home/img8.png" alt="image">
-                    <div class="card-body"><img src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100" src="img/home/img9.png" alt="image">
-                    <div class="card-body"><img src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100" src="img/home/img8.png" alt="image">
-                    <div class="card-body"><img src="img/home/icon-12.svg" alt="image"></div></a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img8.png" alt="image">
+                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img9.png" alt="image">
+                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img8.png" alt="image">
+                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img9.png" alt="image">
+                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img8.png" alt="image">
+                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
               </div>
             </div>
           </div>
@@ -167,7 +167,8 @@
     </div>
   </div>
   @endif
-  @if($news)
+
+  @if($news && $isNonGoogle)
   <div class="section-4 pt-5 pb-5">
     <div class="container">
       <div class="heading pb-4">
@@ -178,7 +179,7 @@
         <div class="item">
           <div class="card">
             <a href="/tin-tuc/{{ Custom::get_url_alias('news_id='.$tin->NEWSID) }}">
-            <img class="w-100 mb-4" src="{{ $tin->IMAGE }}" alt="image">
+            <img class="w-100 mb-4 lazy" data-src="{{ $tin->IMAGE }}" alt="image">
             </a>
             <div class="card-body">
               <a class="text-link" href="/tin-tuc/{{ Custom::get_url_alias('news_id='.$tin->NEWSID) }}"><h4 class="card-title mb-4">{{ $tin->NAME }}</h4></a>

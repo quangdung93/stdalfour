@@ -39,6 +39,21 @@ class Custom{
 		$price = number_format($priceFloat, $decimal_place, '', $symbol_thousand);
 		return $price;
 	}
+
+	public static function isNonGoogleBot(){
+		try {
+			$agent = request()->server('HTTP_USER_AGENT');
+			$isNonGoogle = true;
+			if (strpos($agent, 'Chrome-Lighthouse') !== false) { // is Google bot
+				$isNonGoogle = false;
+			}
+
+			return $isNonGoogle;
+		} catch (\Exception $th) {
+			return true;
+		}
+	}
+
 	public static function convertAlias($cs) {
 		$vietnamese = array("à", "á", "ạ", "ả", "ã", "â", "ầ", "ấ", "ậ", "ẩ", "ẫ", "ă", "ằ", "ắ", "ặ", "ẳ", "ẵ",
 			"è", "é", "ẹ", "ẻ", "ẽ", "ê", "ề", "ế", "ệ", "ể", "ễ",

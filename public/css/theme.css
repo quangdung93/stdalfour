@@ -2606,3 +2606,14 @@ ul.breadcrumbs li{
     font-weight: 400;
     font-size: 15px
 }
+
+img[data-src].lazy {
+  -ms-opacity: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+img[src].lazy {
+  -ms-opacity: 1;
+  opacity: 1;
+}

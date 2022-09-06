@@ -1,4 +1,8 @@
 $(document).ready(function () {
+
+    // Init Lazyload
+    $('.lazy').lazyload({effect: "fadeIn"});
+
     var widthScreen = $(window).width();
 	var slider = $('.slider');
 	slider.owlCarousel({

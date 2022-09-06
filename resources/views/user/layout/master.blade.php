@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="googlebot" content="noindex,nofollow">
+	@if($isNonGoogle)
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -12,6 +13,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-NQCJ3TD');</script>
 	<!-- End Google Tag Manager -->
+	@endif
 	{!! SEOMeta::generate() !!}
 	 <!-- Load css styles-->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
@@ -25,10 +27,12 @@
 </head>
 @section('body')
 <body>
+	@if($isNonGoogle)
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQCJ3TD"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
+	@endif
 	@show
 	@include('user.partial.header')
 	@yield('content')

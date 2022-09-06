@@ -10,7 +10,7 @@
     "description": "{{ $product->SUMMARY }}",
     "category": "{{ $product->CATEGORYID }}",
     "sku": "$sku$",
-    "mpn": ""$sku$",
+    "mpn": "$sku$",
     "brand": {
     "@type": "Brand",
     "name": "ST Dalfour",

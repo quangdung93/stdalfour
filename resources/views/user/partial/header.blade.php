@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg p-0 pt-3 pb-3">
       <div class="container">
         <div class="navbar-toggler"><span class="openmenu">Menu</span></div>
-        <div class="collapse navbar-collapse align-items-center justify-content-between"><a class="navbar-brand" href="/"><img src="/img/home/logo.svg" alt="logo"></a>
+        <div class="collapse navbar-collapse align-items-center justify-content-between"><a class="navbar-brand" href="/"><img src="/img/home/logo.png" alt="logo"></a>
           <div class="float-right d-flex align-items-center">
             <ul class="navbar-nav">
               <li class="nav-item"><a class="nav-link active text-uppercase" href="{{ route('frontend.sanpham.list') }}">Sản phẩm</a></li>
@@ -45,7 +45,7 @@
               <path d="M23 8.33398H5.88892" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
               <path d="M23 1H1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
               <path d="M23 15.666H1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg></span><a class="navbar-brand" href="/"><img src="/img/home/logo.svg" alt="logo" width="50"></a>
+            </svg></span><a class="navbar-brand" href="/"><img src="/img/home/logo.png" alt="logo" width="50"></a>
           <div class="list-icon">
             <div class="icon1 icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -62,13 +62,13 @@
             </div>
           </div>
         </div>
-        <div class="collapse navbar-collapse align-items-center justify-content-between"><a class="navbar-brand" href="/"><img src="/img/home/logo.svg" alt="logo"></a>
+        <div class="collapse navbar-collapse align-items-center justify-content-between"><a class="navbar-brand" href="/"><img width="100" src="/img/home/logo.png" alt="logo"></a>
           <div class="float-right d-flex align-items-center">
             <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link active text-uppercase" href="{{ route('frontend.sanpham.list') }}">Sn phẩm</a></li>
-              <li class="nav-item"><a class="nav-link text-uppercase" href="/thong-tin/dai-ly">đại lý</a></li>
-              <li class="nav-item"><a class="nav-link text-uppercase" href="{{ route('frontend.news') }}">blog làm đp</a></li>
-              <li class="nav-item"><a class="nav-link text-uppercase" href="/thong-tin/gioi-thieu">giới thiệu</a></li>
+              <li class="nav-item"><a class="nav-link active text-uppercase" href="{{ route('frontend.sanpham.list') }}">Sản phẩm</a></li>
+              <li class="nav-item"><a class="nav-link text-uppercase" href="/thong-tin/dai-ly">Đại lý</a></li>
+              <li class="nav-item"><a class="nav-link text-uppercase" href="{{ route('frontend.news') }}">Blog Làm Đẹp</a></li>
+              <li class="nav-item"><a class="nav-link text-uppercase" href="/thong-tin/gioi-thieu">Giới Thiệu</a></li>
             </ul>
             <div class="list-icon">
               <div class="icon1 icon"><img src="{{ asset('/img/home/icon-1.svg') }}" alt=""></div>

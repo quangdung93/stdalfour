@@ -28,7 +28,7 @@
     <div class="container">
       <div class="row pt-5 pb-5">
         <div class="col-lg-4">
-          <div class="logo mb-3"><a href="#"><img class="lazy" data-src="{{ asset('img/home/logo.svg') }}" alt=""></a></div>
+          <div class="logo mb-3"><a href="#"><img class="lazy" width="100" data-src="{{ asset('img/home/logo.png') }}" alt=""></a></div>
           <form class="form" action="#">
             <p>Love beauty innovation?</p>
             <div class="input">

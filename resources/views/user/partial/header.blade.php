@@ -89,6 +89,9 @@
 	@if($getSilde)
     <div class="owl-carousel owl-theme slider">
 	  @foreach($getSilde as $slide)
+      @if($loop->iteration > 1 && !$isNonGoogle)
+        @break
+      @endif
 		  <div class="item"><img class="w-100" src="{{ '/images/slider/'.$slide->image }}" alt="image"></div>
 	  @endforeach
     </div>

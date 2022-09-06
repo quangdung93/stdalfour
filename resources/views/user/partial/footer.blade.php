@@ -1,3 +1,4 @@
+@if($isNonGoogle)
 <div class="section-map pt-5 pb-5">
     <div class="container">
       <div class="d-flex content">
@@ -20,7 +21,9 @@
         <div class="map"><img class="img-fluid lazy" data-src="{{ asset('img/home/map-1.png') }}" alt="map"></div>
       </div>
     </div>
-  </div>
+</div>
+@endif
+
   <footer id="footer">
     <div class="container">
       <div class="row pt-5 pb-5">
@@ -79,7 +82,8 @@
     <div class="text-center copy-right pt-3 pb-3">
       <p class="m-0 p-0">© 2022 All rights reserved</p>
     </div>
-  </footer><a id="top" href="#top"><img class="lazy" data-src="{{ asset('img/home/top.png') }}" alt=""></a>
+  </footer>
+  <a id="top" href="#top"><img class="lazy" data-src="{{ asset('img/home/top.png') }}" alt=""></a>
   <div class="section-search">
     <div class="text-center pt-3 pb-3 img"><img class="lazy" data-src="{{ asset('img/home/logo-s.png') }}" alt=""></div><span class="close"><img class="lazy" data-src="{{ asset('img/home/icon-15.svg') }}" alt=""><span>Close</span></span>
     <form class="form" action="#">

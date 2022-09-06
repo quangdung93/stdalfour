@@ -1,4 +1,23 @@
 @extends('user.layout.master')
+@section('schema')
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/", 
+        "@type": "BreadcrumbList", 
+        "itemListElement": [{
+          "@type": "ListItem", 
+          "position": 1, 
+          "name": "Trang chủ",
+          "item": "{{ url('/') }}"  
+        },{
+          "@type": "ListItem", 
+          "position": 2, 
+          "name": "Tin tức",
+          "item": "{{ url('/tin-tuc') }}"  
+        }]
+      }
+  </script>    
+@endsection
 @section('content')
 	<div class="section-blog pt-5 pb-5"> 
     <div class="container">

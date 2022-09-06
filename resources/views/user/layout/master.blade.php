@@ -23,6 +23,18 @@
     <!-- Load fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&amp;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
 	@yield('css')
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"url": "{{ url('/') }}",
+			"potentialAction": {
+			"@type": "SearchAction",
+			"target": "{{ url('/') }}/tim-kiem?s={search_term_string}",
+			"query-input": "required name=search_term_string"
+			}
+		}
+	</script>
 	@yield('schema')
 </head>
 @section('body')

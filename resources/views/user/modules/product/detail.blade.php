@@ -1,4 +1,66 @@
 @extends('user.layout.master')
+@section('schema')
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "{{ $product->NAME }}",
+    "image": "{{ asset($product->IMAGE) }}",
+    "url": "{{ url($product->URL) }}",
+    "description": "{{ $product->SUMMARY }}",
+    "category": "{{ $product->CATEGORYID }}",
+    "sku": "$sku$",
+    "mpn": ""$sku$",
+    "brand": {
+    "@type": "Brand",
+    "name": "ST Dalfour",
+    "description": "Stdalfour.com.vn: chuyên phân phối mỹ phẩm nhập khẩu giá tốt, mỹ phẩm làm đẹp chất lượng cao từ các thương hiệu nổi tiếng trên thế giới.",
+    "alternateName": "{{ $product->NAME }} ST Dalfour",
+    "url": "https://stdalfour.com.vn",
+    "logo": "https://stdalfour.com.vn/img/home/logo.png",
+    "sameAs": [
+   "https://www.dnb.com/business-directory/company-profiles.swissline_immobilien_gmbh.3ea7ed6db7782333d6881cbacc2bbeed.html",
+      "https://www.swissline-cosmetics.com/"
+    ]},
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "200"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "{{ url($product->URL) }}",
+      "priceCurrency": "VND",
+      "price": "{{ $product->PRICE }}",
+      "priceValidUntil": "{{ \Carbon\Carbon::now()->addDays(90)->format('Y-m-d') }}",
+      "itemCondition": "https://schema.org/NewCondition",
+      availability": "https://schema.org/InStock", "
+      "seller": {
+      "@type": "Organization",
+      "name": "stdalfour.com.vn"
+      }
+    }
+  }</script>
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/", 
+        "@type": "BreadcrumbList", 
+        "itemListElement": [{
+          "@type": "ListItem", 
+          "position": 1, 
+          "name": "Trang chủ",
+          "item": "{{ url('/') }}"  
+        },{
+          "@type": "ListItem", 
+          "position": 2, 
+          "name": "Sản phẩm",
+          "item": "{{ url('/san-pham') }}"  
+        }]
+      }
+  </script>    
+@endsection
 @section('content')
   <div class="container">
     <div class="row">

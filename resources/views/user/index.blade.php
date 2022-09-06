@@ -1,4 +1,52 @@
 @extends('user.layout.master')
+@section('schema')
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HealthAndBeautyBusiness",
+        "name": "Stdalfour.com.vn: Sứ Mệnh Làm Đẹp Cho Phụ Nữ Việt",
+        "description": "Stdalfour.com.vn: chuyên phân phối mỹ phẩm nhập khẩu giá tốt, mỹ phẩm làm đẹp chất lượng cao từ các thương hiệu nổi tiếng trên thế giới.",
+        "image": "https://stdalfour.com.vn/img/home/logo.png",
+        "@id": "",
+        "url": "{{ url('/') }}",
+        "telephone": "+84 888845999",
+        "priceRange": "200000VND-5000000VND",
+        "email": "info@dangcapphaidep.vn",
+        "faxNumber": "0315089805",
+        "hasMap": "https://www.google.com/maps/place/%C4%90%E1%BA%B3ng+C%E1%BA%A5p+Ph%C3%A1i+%C4%90%E1%BA%B9p+-+Dangcapphaidep.vn/@10.7942599,106.6784174,17z/data=!3m1!4b1!4m8!1m2!2m1!1zxJHhurNuZyBj4bqlcCBwaMOhaSDEkeG6uXA!3m4!1s0x317528cef8c16579:0x494fce39a29c815d!8m2!3d10.7942599!4d106.6806061",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "72/1B Huỳnh Văn Bánh, Phường 15, Quận Phú Nhuận",
+          "addressLocality": "Hồ Chí Minh",
+          "postalCode": "700000",
+          "addressCountry": "VN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 10.7942599,
+          "longitude": 106.6806061
+        },
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "18:00"
+        },{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "13:00"
+        }] 
+      }
+    </script>
+@endsection
+
 @section('content')
 	@if($producthot)
 	<div class="section-1 pt-5 pb-5">

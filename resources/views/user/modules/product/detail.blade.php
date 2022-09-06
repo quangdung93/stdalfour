@@ -36,10 +36,10 @@
       "price": "{{ $product->PRICE }}",
       "priceValidUntil": "{{ \Carbon\Carbon::now()->addDays(90)->format('Y-m-d') }}",
       "itemCondition": "https://schema.org/NewCondition",
-      availability": "https://schema.org/InStock", "
+      "availability": "https://schema.org/InStock",
       "seller": {
-      "@type": "Organization",
-      "name": "stdalfour.com.vn"
+        "@type": "Organization",
+        "name": "stdalfour.com.vn"
       }
     }
   }</script>

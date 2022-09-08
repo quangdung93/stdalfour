@@ -52,7 +52,7 @@
 	<div class="section-1 pt-5 pb-5">
     <div class="container">
       <div class="heading pb-5">
-        <h2>my skincare rountine </h2>
+        <h2>DƯỠNG DA TRẮNG SÁNG RẠNG NGỜI </h2>
       </div>
       <div class="row">
 		@foreach($producthot as $km)
@@ -76,8 +76,8 @@
 	  <div class="section-2 pt-5 pb-5">
 		<div class="container">
 		  <div class="heading pb-5">
-			<h2>THIS MONTH’S CURATION</h2>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+			<h2>SẢN PHẨM DƯỠNG TRẮNG THUẦN TỰ NHIÊN</h2>
+			<p>Các sản phẩm chăm sóc da của ST Dalfour đều được bào chế từ nguồn thảo dược thiên nhiên, các loại trái cây tự nhiên đã được tinh lọc kỹ lưỡng kết hợp với công nghệ sản xuất hiện đại mang đến làn da trắng sáng hoàn hảo nhưng vẫn đảm bảo an toàn cho mọi loại da, kể cả làn da nhạy cảm nhất.</p>
 		  </div>
 		  <div class="slides-custom owl-carousel owl-theme style1_dots">
           @foreach ($pic_thumb_array as $pic_thumb_array_val)
@@ -96,20 +96,20 @@
   <div class="section-3 pt-5 pb-5">
     <div class="container">
       <div class="heading pb-4">
-        <h2>FROM THE HOUSE</h2>
+        <h2>ƯU ĐIỂM NỔI BẬT</h2>
       </div>
       <ul class="nav" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="products-tab" data-bs-toggle="tab" data-bs-target="#products" type="button" role="tab" aria-controls="products" aria-selected="true">Products</button>
+          <button class="nav-link active" id="products-tab" data-bs-toggle="tab" data-bs-target="#products" type="button" role="tab" aria-controls="products" aria-selected="true">Sản phẩm</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="store-tab" data-bs-toggle="tab" data-bs-target="#store" type="button" role="tab" aria-controls="store" aria-selected="true">Store</button>
+          <button class="nav-link" id="store-tab" data-bs-toggle="tab" data-bs-target="#store" type="button" role="tab" aria-controls="store" aria-selected="true">Thành phần</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="experience-tab" data-bs-toggle="tab" data-bs-target="#experience" type="button" role="tab" aria-controls="experience" aria-selected="true">Experience</button>
+          <button class="nav-link" id="experience-tab" data-bs-toggle="tab" data-bs-target="#experience" type="button" role="tab" aria-controls="experience" aria-selected="true">Công dụng</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="science-tab" data-bs-toggle="tab" data-bs-target="#science" type="button" role="tab" aria-controls="science" aria-selected="true">Science</button>
+          <button class="nav-link" id="science-tab" data-bs-toggle="tab" data-bs-target="#science" type="button" role="tab" aria-controls="science" aria-selected="true">Sứ mệnh</button>
         </li>
       </ul>
       <div class="tab-content mt-5">
@@ -118,8 +118,8 @@
             <div class="col-lg-4">
               <div class="card">
                 <div class="card-body">
-                  <h3 class="card-title">What is Lorem Ipsum?</h3>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p><a href="#">Xem thêm</a>
+                  <h3 class="card-title">Dưỡng da trắng sáng an toàn</h3>
+                  <p>“Sản phẩm St Dalfour Beauty Whitening Excel Cream tổng hợp các tinh chất làm trắng đỉnh cao như Arbutin, Vitamin C, Glutathione có trong cây Bearberry đảm bảo da sáng mịn nhưng vẫn an toàn. Đặc biệt chất kem mềm mịn, tan nhanh, thoa  lên da cực kỳ  dễ dàng, thoa xong sẽ để lại một lớp màng ẩm mượt nhẹ cho da mà không gây nhờn rít và đổ dầu như các dòng kem trắng da khác…”</p><a href="#">Xem thêm</a>
                 </div>
               </div>
             </div>
@@ -138,8 +138,8 @@
             <div class="col-lg-4">
               <div class="card">
                 <div class="card-body">
-                  <h3 class="card-title">What is Lorem Ipsum?</h3>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p><a href="#">Xem thêm</a>
+                  <h3 class="card-title">Thành phần thuần tự nhiên</h3>
+                  <p>Các sản phẩm chăm sóc da đến từ nhãn hàng St Dalfour đều được bào chế từ nguồn thảo dược thiên nhiên, ứng dụng công nghệ tiên tiến đảm bảo an toàn cho mọi loại da, kể cả làn da nhạy cảm nhất. Ngoài chiết xuất bearberry nổi bật, các sản phẩm của hãng còn được làm giàu với glycine, Shea Butter, chiết xuất cỏ dại biển, vitamin E, glutathione…</p><a href="#">Xem thêm</a>
                 </div>
               </div>
             </div>
@@ -164,8 +164,8 @@
             <div class="col-lg-4">
               <div class="card">
                 <div class="card-body">
-                  <h3 class="card-title">What is Lorem Ipsum?</h3>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p><a href="#">Xem thêm</a>
+                  <h3 class="card-title">Chăm sóc da tối ưu</h3>
+                  <p>Mỗi sản phẩm St Dalfour khi ra đời gần như đáp ứng đầy đủ mọi nhu cầu chăm sóc, bảo vệ làn da của tín đồ làm đẹp như khả năng chống lão hóa da, dưỡng da trắng sáng, chống nắng…Một số công thức được thiết kế để phù hợp với da bị mụn hoặc nhạy cảm. Bất kể nhu cầu của bạn là gì, những sản phẩm của ST Dalfour đều mang lại kết quả mà bạn cảm thấy hài lòng.</p><a href="#">Xem thêm</a>
                 </div>
               </div>
             </div>
@@ -190,8 +190,8 @@
             <div class="col-lg-4">
               <div class="card">
                 <div class="card-body">
-                  <h3 class="card-title">What is Lorem Ipsum?</h3>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p><a href="#">Xem thêm</a>
+                  <h3 class="card-title">Phương châm hoạt động</h3>
+                  <p>Trải qua gần 40 năm hình thành và phát triển, các sản phẩm của ST Dalfour được xếp hạng là một trong số các giải pháp làm trắng da phổ biến nhất trên thế giới. Trong suốt những năm tháng ấy, ST Dalfour vẫn luôn lấy làn da phụ nữ làm yếu tố trung tâm để không ngừng phát triển các sản phẩm chăm sóc da hoàn hảo.</p><a href="#">Xem thêm</a>
                 </div>
               </div>
             </div>

@@ -27,15 +27,14 @@
   <footer id="footer">
     <div class="container">
       <div class="row pt-5 pb-5">
-        <div class="col-lg-4">
+        <div class="col-lg-2 text-center">
           <div class="logo mb-3"><a href="#"><img class="lazy" width="100" data-src="{{ asset('img/home/logo.png') }}" alt=""></a></div>
-          <form class="form" action="#">
-            <p>Love beauty innovation?</p>
+          {{-- <form class="form" action="#">
             <div class="input">
               <input type="email" requied placeholder="Email">
               <button type="submit"><img class="lazy" data-src="{{ asset('img/home/icon-8.svg') }}" alt=""></button>
             </div>
-          </form>
+          </form> --}}
           <div class="social mt-4">
             <div class="d-flex align-items-center justify-content-between m-0 p-0">
               <div class="item"><a href="#"><img class="lazy" data-src="{{ asset('img/home/icon-9.svg') }}" alt=""></a></div>
@@ -44,35 +43,38 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-10">
           <div class="row">
-            <div class="col-lg-4 item">
-              <h4>ABOUT</h4>
+            <div class="col-lg-5 item">
               <ul>
-                <li><a href="#">Collections</a></li>
-                <li><a href="#">Skincare</a></li>
-                <li><a href="#">Makeup</a></li>
-                <li><a href="#">The House</a></li>
+                <li><a href="#" class="font-bold">CÔNG TY CỔ PHẦN VINAAURA [ĐỘC QUYỀN PH N PHỐI TẠI VIỆT NAM]</a></li>
+                <li><a href="#">HỒ CHÍ MINH: 72/1b Huỳnh Văn Bánh, Phường 15, Q.Phú Nhuận</a></li>
+                <li><a href="#">HÀ NỘI: 319 Trần Cung, Từ Liêm</a></li>
+                <li><a href="#">ĐIỆN THOẠI:  070.3399.789</a></li>
+                <li><a href="#">EMAIL: dangcapphaidep@gmail.com</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-3 item">
+              <ul>
+                <li><a href="#" class="font-bold">GIỜ LÀM VIỆC</a></li>
+                <li><a href="#">+ 8:15 - 17:15 (Thứ 2 - Thứ 6)</a></li>
+                <li><a href="#">+ 8:15 - 11h45 (Thứ 7)</a></li>
+              </ul>
+              <h4></h4>
+              <ul>
+                <li><a href="#" class="font-bold">MÃ SỐ THUẾ</a></li>
+                <li><a href="#">0315089805</a></li>
               </ul>
             </div>
             <div class="col-lg-4 item">
-              <h4>LA PRAIRIE</h4>
               <ul>
-                <li><a href="#">Collections</a></li>
-                <li><a href="#">Skincare</a></li>
-                <li><a href="#">Makeup</a></li>
-                <li><a href="#">The House</a></li>
-              </ul>
-            </div>
-            <div class="col-lg-4 item">
-              <h4>Legal</h4>
-              <ul>
-                <li>     <a href="#">Privacy policy</a></li>
-                <li><a href="#">Cookie policy</a></li>
-                <li><a href="#">Terms and conditions</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Press</a></li>
-                <li><a href="#">Imprint</a></li>
+                <li><a href="#" class="font-bold">HỖ TRỢ KHÁCH HÀNG</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Hình thức giao hàng</a></li>
+                <li><a href="#">Hình thức thanh toán</a></li>
+                <li><a href="#">Chính sách đổi trả</a></li>
+                <li><a href="#">Chính sách bảo mật</a></li>
+                <li><a href="#">Chính sách biên tập</a></li>
               </ul>
             </div>
           </div>

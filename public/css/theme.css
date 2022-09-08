@@ -21,6 +21,10 @@ body {
   line-height: 35px;
 }
 
+.font-bold{
+  font-weight: 600 !important;
+}
+
 #header.header2 {
   background: #2B2B2B;
   height: 97px;
@@ -1540,9 +1544,7 @@ a.text-link{
   padding: 0;
   margin: 0;
 }
-#footer .social {
-  width: 270px;
-}
+
 #footer .copy-right {
   border-top: 1px solid rgba(238, 221, 175, 0.15);
 }

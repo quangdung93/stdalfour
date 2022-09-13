@@ -6,7 +6,7 @@
           <div class="inn">
             <div class="d-flex align-items-center mb-3">
               <div class="icon"><img class="lazy" data-src="{{ asset('img/home/icon-3.svg') }}" alt=""></div>
-              <div class="title"><a href="tel:0906947824">0906947824</a></div>
+              <div class="title"><a href="tel:0909991612">0909991612 (Mr.Bách)</a></div>
             </div>
             <div class="d-flex align-items-center mb-3">
               <div class="icon"><img class="lazy" data-src="{{ asset('img/home/icon-4.svg') }}" alt=""></div>

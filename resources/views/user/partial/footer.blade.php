@@ -18,7 +18,18 @@
             </div>
           </div>
         </div>
-        <div class="map"><img class="img-fluid lazy" data-src="{{ asset('img/home/map-1.png') }}" alt="map"></div>
+        <div class="map">
+          {{-- <img class="img-fluid lazy" data-src="{{ asset('img/home/map-1.png') }}" alt="map"> --}}
+            <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1496.5880489355543!2d106.6797709038836!3d10.794572647144804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528d4404e3a19%3A0x25f861ded2cfc242!2zNzIvMSBIdeG7s25oIFbEg24gQsOhbmgsIFBoxrDhu51uZyAxNSwgUGjDuiBOaHXhuq1uLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmg!5e0!3m2!1svi!2s!4v1662693252205!5m2!1svi!2s" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
     </div>
 </div>
@@ -50,7 +61,7 @@
                 <li><a href="#" class="font-bold">CÔNG TY CỔ PHẦN VINAAURA [ĐỘC QUYỀN PH N PHỐI TẠI VIỆT NAM]</a></li>
                 <li><a href="#">HỒ CHÍ MINH: 72/1b Huỳnh Văn Bánh, Phường 15, Q.Phú Nhuận</a></li>
                 <li><a href="#">HÀ NỘI: 319 Trần Cung, Từ Liêm</a></li>
-                <li><a href="#">ĐIỆN THOẠI:  070.3399.789</a></li>
+                <li><a href="#">ĐIỆN THOẠI:  0909991612 (Mr.Bách)</a></li>
                 <li><a href="#">EMAIL: dangcapphaidep@gmail.com</a></li>
               </ul>
             </div>

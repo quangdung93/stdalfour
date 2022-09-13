@@ -293,6 +293,10 @@
   }
 }
 @media (max-width: 767px) {
+  .section-map .content {
+    flex-direction: column;
+  }
+
   .slides-custom{
     display: flex;
     flex-wrap: nowrap;

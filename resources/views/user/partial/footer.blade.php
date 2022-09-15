@@ -80,12 +80,12 @@
             <div class="col-lg-4 item">
               <ul>
                 <li><a href="#" class="font-bold">HỖ TRỢ KHÁCH HÀNG</a></li>
-                <li><a href="#">Giới thiệu</a></li>
-                <li><a href="#">Hình thức giao hàng</a></li>
-                <li><a href="#">Hình thức thanh toán</a></li>
-                <li><a href="#">Chính sách đổi trả</a></li>
-                <li><a href="#">Chính sách bảo mật</a></li>
-                <li><a href="#">Chính sách biên tập</a></li>
+                <li><a href="https://stdalfour.com.vn/thong-tin/gioi-thieu">Giới thiệu</a></li>
+                <li><a href="https://stdalfour.com.vn/thong-tin/hinh-thuc-giao-hang">Hình thức giao hàng</a></li>
+                <li><a href="https://stdalfour.com.vn/thong-tin/hinh-thuc-thanh-toan">Hình thức thanh toán</a></li>
+                <li><a href="https://stdalfour.com.vn/thong-tin/chinh-sach-doi-tra">Chính sách đổi trả</a></li>
+                <li><a href="https://stdalfour.com.vn/thong-tin/chinh-sach-bao-mat">Chính sách bảo mật</a></li>
+                <li><a href="https://stdalfour.com.vn/thong-tin/chinh-sach-bien-tap">Chính sách biên tập</a></li>
               </ul>
             </div>
           </div>

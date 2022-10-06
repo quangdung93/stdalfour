@@ -10,11 +10,11 @@
             </div>
             <div class="d-flex align-items-center mb-3">
               <div class="icon"><img class="lazy" data-src="{{ asset('img/home/icon-4.svg') }}" alt=""></div>
-              <div class="title"><span>contact-us</span></div>
+              <div class="title"><span>dangcapphaidep@gmail.com</span></div>
             </div>
             <div class="d-flex align-items-center mb-3">
               <div class="icon"><img class="lazy" data-src="{{ asset('img/home/icon-5.svg') }}" alt=""></div>
-              <div class="title"><span>24953 Paseo De Valencia, #6c, Laguna Hills, Ca 92653</span></div>
+              <div class="title"><span>72/1b Huỳnh Văn Bánh, Phường 15, Q.Phú Nhuận</span></div>
             </div>
           </div>
         </div>

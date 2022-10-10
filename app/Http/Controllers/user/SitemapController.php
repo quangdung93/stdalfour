@@ -31,9 +31,17 @@ class SitemapController extends Controller
         elseif($type == 'category'){
             $data = catModel::all();
         }
-        // elseif($type == 'page'){
-        //     $data = Pages::all();
-        // }
+        elseif($type == 'page'){
+            $data = [
+                'thong-tin/dai-ly',
+                'thong-tin/gioi-thieu',
+                'thong-tin/hinh-thuc-giao-hang',
+                'thong-tin/hinh-thuc-thanh-toan',
+                'thong-tin/chinh-sach-doi-tra',
+                'thong-tin/chinh-sach-bao-mat',
+                'thong-tin/chinh-sach-bien-tap'
+            ];
+        }
         // elseif($type == 'brand'){
         //     $data = ProductCategory::isBrand(true)->get();
         // }

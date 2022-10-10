@@ -18,13 +18,13 @@
         @foreach($data as $item)
             <url>
                 @if($type == 'product')
-                <loc>{{url($item->URL)}}.html</loc>
+                <loc>{{url($item->URL)}}</loc>
                 @elseif($type == 'post')
                 <loc>{{url($item->URL)}}</loc>
                 @elseif($type == 'page')
-                <loc>{{url($item->URL)}}.html</loc>
+                <loc>{{url($item)}}</loc>
                 @elseif($type == 'category' || $type == 'brand')
-                <loc>{{url($item->URL)}}.html</loc>
+                <loc>{{url($item->URL)}}</loc>
                 @endif
                 <changefreq>always</changefreq>
                 <priority>0.9</priority>

@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers\user;
 
-use Custom;
 use DB;
-use Auth;
 use SEO;
+use Auth;
+use Custom;
 use SEOMeta;
-use OpenGraph;
 use Twitter;
-use App\Http\Models\articlesModel;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Lang;
+use OpenGraph;
 use Illuminate\Http\Request;
+use App\Http\Models\productModel;
+use App\Http\Models\articlesModel;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Validator;
+use Symfony\Component\HttpFoundation\Cookie;
 
 class NewsController extends Controller
 {
@@ -32,7 +34,30 @@ class NewsController extends Controller
 				$getquery = explode('=',$checkurl->query);
 				if($getquery[0] == 'news_id'){
 					$idnew = $getquery[1];
-					$news = DB::table('news')->join('news_detail', 'news.ID', '=', 'news_detail.NEWSID')->where('news.STATUS',1)->where('news.ID',$idnew)->first();
+					$news = DB::table('news')
+							->join('news_detail', 'news.ID', '=', 'news_detail.NEWSID')
+							->leftJoin('users', 'news.POST_AUTHOR', '=', 'users.iduser')
+							->where('news.STATUS',1)
+							->where('news.ID',$idnew)
+							->first();
+
+					$category = DB::table('category_news')
+								->join('category_news_detail', 'category_news.ID', '=', 'category_news_detail.CATEGORYID')
+								->where('category_news.ID',$news->CAT_ID)
+								->first();
+
+					$relatedNews = DB::table('news')
+						->join('news_detail', 'news.ID', '=', 'news_detail.NEWSID')
+						->where('news.STATUS',1)
+						->where('news.CAT_ID',$category->ID)
+						->inRandomOrder()
+						->limit(7)
+						->get();
+
+					$productcat = productModel::join('product_detail', 'product.ID', '=', 'product_detail.PRODUCTID');
+					$productcat->where('product.STATUS',1);
+					$products = $productcat->orderBy('product.ID','DESC')->limit(5)->get();
+					
 					if(empty($news)){
 						return abort(404);
 					}else{
@@ -65,7 +90,12 @@ class NewsController extends Controller
 					OpenGraph::addProperty('locale:alternate', ['pt-pt', 'en-us']);
 					OpenGraph::addImage(env('APP_URL').$news->IMAGE, ['height' => 476, 'width' => 249]);
 					$theme = 'user.modules.news.detail';
-					return view($theme, ['news' => $news]);
+					return view($theme, [
+						'news' => $news, 
+						'category' => $category, 
+						'relatedNews' => $relatedNews,
+						'products' => $products,
+					]);
 				}else{
 					return abort(404);
 				}

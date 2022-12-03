@@ -59,6 +59,7 @@ class LoginController extends Controller
                'limit'  => 1
             );
             $member = $this->memberModel->memberInforRecord($querySql);
+
 			if(!empty($member)){
 				if($member->enable == 0){
                     return redirect()->back()->with('warning',lang::get('member.err_author_disable'));

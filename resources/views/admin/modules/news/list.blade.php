@@ -71,6 +71,8 @@
 									<th>Ảnh</th>
 									<th>Danh mục</th>
 									<th>Tên</th>
+									<th>Ngày tạo</th>
+									<th>Người tạo</th>
 									<th>Status</th>
 									<th>Thao tác</th>
 								</tr>
@@ -98,6 +100,8 @@
 											<td>
 												{{ $items->NAME }}
 											</td>
+											<td>{{ \Carbon\Carbon::parse($items->DATECREATE)->format('d/m/Y') }}</td>
+											<td>{{ $items->hoten }}</td>
 											<td>
 												<?php if($items->STATUS == 1) { ?>
 													<a href="javscript:void(0)">Active</a>

@@ -32,6 +32,7 @@ class CategoryController extends Controller
 	}
 	public function getDetail(Request $request){
 		$geturl = $request->urlpost;
+
 		if($geturl){
 			$checkurl = DB::table('url_alias')->where('keyword',$geturl)->where('data_id',3)->orderBy('url_alias_id','DESC')->first();
 			if($checkurl){
@@ -39,8 +40,17 @@ class CategoryController extends Controller
 				if($getquery[0] == 'product_id'){
 					$idpro = $getquery[1];
 					$product = productModel::join('product_detail', 'product.ID', '=', 'product_detail.PRODUCTID')->where('product.STATUS',1)->where('product.ID',$idpro)->first();
+
+					$relatedProduct = productModel::join('product_detail', 'product.ID', '=', 'product_detail.PRODUCTID')
+										->where('product.STATUS',1)
+										->where('product.ID', '!=', $idpro)
+										->get();
+					
 					$theme = 'user.modules.product.detail';
-					return view($theme, ['product' => $product]);
+					return view($theme, [
+						'product' => $product,
+						'relatedProduct' => $relatedProduct,
+					]);
 				}
 			}else{
 				return abort(404);

@@ -48,9 +48,9 @@
           </form> --}}
           <div class="social mt-4">
             <div class="d-flex align-items-center justify-content-between m-0 p-0">
-              <div class="item"><a href="#"><img class="lazy" data-src="{{ asset('img/home/icon-9.svg') }}" alt=""></a></div>
-              <div class="item"><a href="#"><img class="lazy" data-src="{{ asset('img/home/icon-6.svg') }}" alt=""></a></div>
-              <div class="item"><a href="#"><img class="lazy" data-src="{{ asset('img/home/icon-7.svg') }}" alt=""></a></div>
+              <div class="item"><a href="https://twitter.com/stdalfourvn"><img class="lazy" width="40" data-src="{{ asset('img/home/twitter-logo.png') }}" alt=""></a></div>
+              <div class="item"><a href="https://www.pinterest.com/stdalfourvn/my-pham-st-dalfour"><img class="lazy" width="50" data-src="{{ asset('img/home/pinter.png') }}" alt=""></a></div>
+              <div class="item"><a href="https://www.instagram.com/stdalfourvn/"><img class="lazy" width="35" data-src="{{ asset('img/home/instagram.png') }}" alt=""></a></div>
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@
           <div class="row">
             <div class="col-lg-5 item">
               <ul>
-                <li><a href="#" class="font-bold">CÔNG TY CỔ PHẦN VINAAURA [ĐỘC QUYỀN PH N PHỐI TẠI VIỆT NAM]</a></li>
+                <li><a href="#" class="font-bold">CÔNG TY CỔ PHẦN VINAAURA [ĐỘC QUYỀN PHÂN PHỐI TẠI VIỆT NAM]</a></li>
                 <li><a href="#">HỒ CHÍ MINH: 72/1b Huỳnh Văn Bánh, Phường 15, Q.Phú Nhuận</a></li>
                 <li><a href="#">HÀ NỘI: 319 Trần Cung, Từ Liêm</a></li>
                 <li><a href="#">ĐIỆN THOẠI:  0909991612 (Mr.Bách)</a></li>

@@ -1,5 +1,32 @@
 @extends('user.layout.master')
 @section('schema')
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Stdalfour.com.vn",
+      "alternateName": "Stdalfour.com.vn: Sứ Mệnh Làm Đẹp Cho Phụ Nữ Việt",
+      "url": "https://stdalfour.com.vn",
+      "logo": "https://stdalfour.com.vn/img/home/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+84 888845999",
+        "contactType": "bill payment",
+        "contactOption": "TollFree",
+        "areaServed": "VN",
+        "availableLanguage": "Vietnamese"
+      },
+      "sameAs": [
+        "https://twitter.com/stdalfourvn",
+        "https://www.instagram.com/stdalfourvn/",
+        "https://www.linkedin.com/in/stdalfourvn/",
+        "https://www.pinterest.com/stdalfourvn/",
+        "https://stdalfourvn.tumblr.com/",
+        "https://stdalfour.com.vn/"
+      ]
+    }
+    </script>
+  
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",

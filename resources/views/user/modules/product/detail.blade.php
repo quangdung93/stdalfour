@@ -66,15 +66,12 @@
     <div class="row">
       <div class="col-sm-12">
         <ul class="breadcrumbs">
-          <li>Trang chủ</li>
-          <li>/ Sản phẩm</li>
+          <li><a href="/">Trang chủ</a></li>
+          <li>/ <a href="/san-pham">Sản phẩm</a></li>
         </ul>
       </div>
     </div>
   </div>
-  @if($product->ORIGIN)
-	{!! $product->ORIGIN !!}
-  @endif
   <div class="section-15 pt-5 pb-5">
     <div class="container">
       <div class="row">
@@ -107,7 +104,7 @@
             </div><span>4.9 (123) Write a review</span>
           </div>
           <div class="description mb-3">
-			<span class="mb-2 d-block">Discover complexion perfection</span>
+			  <span class="mb-2 d-block">Discover complexion perfection</span>
             <p>{{ $product->SUMMARY }}</p>
           </div>
           <div class="pt-3 pb-3">
@@ -138,36 +135,35 @@
       </div>
     </div>
   </div>
+  @if($product->ORIGIN)
+	{!! $product->ORIGIN !!}
+  @endif
+
+  @if($relatedProduct)
   <div class="section-16 pb-5">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="item d-flex align-items-center"><img class="lazy" data-src="/img/detail/img33.png" alt="">
-            <div class="card-body">
-              <h4 class="card-title">Home-Spa Hydration Pack</h4>
-              <p>Bundle contains: 1x UFO™, 5x7 Make My Day Mask and 5x7 Call It a Night Mask</p><span class="price-old d-block">4.567.000 vnd</span><span class="price-new d-block">4.567.000 vnd</span><a class="buy mt-3" href="#">Mua ngay</a>
-            </div>
-          </div>
+        <div class="row">
+            @foreach($relatedProduct as $key => $item)
+              @php
+                $urlProduct = route('frontend.category.detail', ['urlpost' => Custom::get_url_alias('product_id='.$item->PRODUCTID)]);
+              @endphp
+              <div class="col-lg-6">
+                  <div class="item d-flex align-items-center">
+                      <img class="lazy img-w-150" data-src="{{ asset($item->IMAGE) }}" alt="">
+                      <div class="card-body">
+                        <h4 class="card-title">{{ $item->NAME }}</h4>
+                        <p>{{ \Str::limit($item->SUMMARY, 70) }}</p>
+                        <span class="price-old d-block">4.567.000 vnd</span>
+                        <span class="price-new d-block">{{ $item->PRICE }} đ</span>
+                        <a class="buy mt-3" href="{{ $urlProduct }}">Mua ngay</a>
+                      </div>
+                  </div>
+              </div>
+            @endforeach
         </div>
-        <div class="col-lg-4">
-          <div class="item d-flex align-items-center"><img class="lazy" data-src="/img/detail/img33.png" alt="">
-            <div class="card-body">
-              <h4 class="card-title">Home-Spa Hydration Pack</h4>
-              <p>Bundle contains: 1x UFO™, 5x7 Make My Day Mask and 5x7 Call It a Night Mask</p><span class="price-old d-block">4.567.000 vnd</span><span class="price-new d-block">4.567.000 vnd</span><a class="buy mt-3" href="#">Mua ngay</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="item d-flex align-items-center"><img class="lazy" data-src="/img/detail/img33.png" alt="">
-            <div class="card-body">
-              <h4 class="card-title">Home-Spa Hydration Pack</h4>
-              <p>Bundle contains: 1x UFO™, 5x7 Make My Day Mask and 5x7 Call It a Night Mask</p><span class="price-old d-block">4.567.000 vnd</span><span class="price-new d-block">4.567.000 vnd</span><a class="buy mt-3" href="#">Mua ngay</a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
+  @endif
   <div class="section-review pb-5">
     <div class="container">
       <div class="text-center">

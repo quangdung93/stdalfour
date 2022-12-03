@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\admin;
 
-use Illuminate\Http\Request;
+use DB;
+use Session;
 use App\Http\Requests;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use App\Http\Models\newsModel;
 use App\Http\Models\aliasModel;
-use App\Http\Models\newsdetailModel;
-use Illuminate\Support\Str;
-use Session;
-use DB;
 use App\Http\Controllers\Controller;
+use App\Http\Models\newsdetailModel;
+use Illuminate\Support\Facades\Auth;
 
 class NewsController extends Controller
 {
@@ -18,7 +19,9 @@ class NewsController extends Controller
 		$keysearch = $request->keysearch ? $request->keysearch : '';
 		$trangthai = $request->trangthai ? $request->trangthai : 0;
 		$cat_id = $request->cat_id ? $request->cat_id : 0;
-		$news = newsModel::join('news_detail', 'news.ID', '=', 'news_detail.NEWSID');
+		$news = newsModel::join('news_detail', 'news.ID', '=', 'news_detail.NEWSID')
+		->leftJoin('users', 'news.POST_AUTHOR', '=', 'users.iduser')
+		;
 		if(!empty($keysearch)){
 			$keysearch = str_replace('+', ' ', $keysearch);
 			$news->where('news_detail.NAME', 'LIKE', '%'.$keysearch.'%');
@@ -50,6 +53,7 @@ class NewsController extends Controller
 			'SORT'  => 0,
 			'TOTALVIEW' => 0,
 			'MOSTVIEW' => 0,
+			'POST_AUTHOR' => request()->cookie('userAdId'),
 			'STATUS'  => $request->news_enabled
 		);
 		if(!empty($insert_data)){

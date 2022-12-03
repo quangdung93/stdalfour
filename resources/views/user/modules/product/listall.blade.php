@@ -1,4 +1,49 @@
 @extends('user.layout.master')
+@section('schema')
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/", 
+    "@type": "BreadcrumbList", 
+    "itemListElement": [{
+      "@type": "ListItem", 
+      "position": 1, 
+      "name": "Trang chủ",
+      "item": "{{ url('/') }}"  
+    },{
+      "@type": "ListItem", 
+      "position": 2, 
+      "name": "Sản phẩm",
+      "item": "{{ url('/san-pham') }}"  
+    }]
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "name": "Sản phẩm",
+    "alternateName": "",
+    "image": "https://stdalfour.com.vn/img/home/logo.png",
+    "url": "{{ url('/san-pham') }}",
+    "description": "",
+    "sameAs": [
+      "http://swisslinevietnam.com",
+      "https://www.swissline-cosmetics.com"
+    ],
+    "numberOfItems": "{{ $productcat->count() }}",
+    "additionalType":[
+      "http://www.productontology.org/id/Skin_care",
+      "http://www.productontology.org/id/Beauty"
+    ],
+    "itemListElement":[
+      @foreach($productcat as $km)
+      {"@type":"ListItem","position": {{ $loop->iteration }},"url":"{{ route('frontend.category.detail', ['urlpost' => Custom::get_url_alias('product_id='.$km->PRODUCTID)]) }}"}@if(!$loop->last),@endif
+      @endforeach
+    ]
+  }
+</script>
+@endsection
+{{-- @dd($productcat) --}}
 @section('content')
 	<div class="seciton-product">
     <div class="container">

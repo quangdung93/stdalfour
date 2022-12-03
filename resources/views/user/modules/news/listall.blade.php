@@ -16,7 +16,37 @@
           "item": "{{ url('/tin-tuc') }}"  
         }]
       }
-  </script>    
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"ItemList",
+      "name": "Tin tức",
+      "alternateName": "",
+      "image": "https://stdalfour.com.vn/img/home/logo.png",
+      "url": "{{ url('/tin-tuc') }}",
+      "description": "",
+      "sameAs": [
+        "http://swisslinevietnam.com",
+        "https://www.swissline-cosmetics.com"
+      ],
+      "numberOfItems": "{{ $news->count() }}",
+      "additionalType":[
+        "http://www.productontology.org/id/Skin_care",
+        "http://www.productontology.org/id/Beauty"
+      ],
+      "itemListElement":[
+        @foreach($news as $tin)
+        {
+          "@type":"ListItem",
+          "position": {{ $loop->iteration }},
+          "url":"https://stdalfour.com.vn/tin-tuc/{{ Custom::get_url_alias('news_id='.$tin->NEWSID) }}"
+        }@if(!$loop->last),@endif
+        @endforeach
+      ]
+    }
+    </script>
+
 @endsection
 @section('content')
 	<div class="section-blog pt-5 pb-5"> 

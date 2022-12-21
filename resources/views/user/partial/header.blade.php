@@ -71,8 +71,8 @@
               <li class="nav-item"><a class="nav-link text-uppercase" href="/thong-tin/gioi-thieu">Giới Thiệu</a></li>
             </ul>
             <div class="list-icon">
-              <div class="icon1 icon"><img src="{{ asset('/img/home/icon-1.svg') }}" alt=""></div>
-              <div class="icon2 icon"><img src="{{ asset('/img/home/icon-2.svg') }}" alt=""></div>
+              <div class="icon1 icon"><img src="{{ asset('/img/home/icon-1.svg') }}" alt="icon 1"></div>
+              <div class="icon2 icon"><img src="{{ asset('/img/home/icon-2.svg') }}" alt="icon 2"></div>
             </div>
           </div><span class="close">
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">

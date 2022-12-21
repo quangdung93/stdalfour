@@ -27,8 +27,8 @@
               <li class="nav-item"><a class="nav-link text-uppercase" href="/thong-tin/gioi-thieu">giới thiệu</a></li>
             </ul>
             <div class="list-icon">
-              <div class="icon1 icon"><img src="/img/home/icon-1.svg" alt=""></div>
-              <div class="icon2 icon"><img src="/img/home/icon-2.svg" alt=""></div>
+              <div class="icon1 icon"><img src="/img/home/icon-1.svg" alt="icon list 1"></div>
+              <div class="icon2 icon"><img src="/img/home/icon-2.svg" alt="icon list 2"></div>
             </div>
           </div>
         </div>

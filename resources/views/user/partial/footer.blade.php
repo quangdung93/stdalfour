@@ -5,15 +5,15 @@
         <div class="info py-4 px-4">
           <div class="inn">
             <div class="d-flex align-items-center mb-3">
-              <div class="icon"><img class="lazy" data-src="{{ asset('img/home/icon-3.svg') }}" alt=""></div>
+              <div class="icon"><img class="lazy" data-src="{{ asset('img/home/icon-3.svg') }}" alt="icon phone"></div>
               <div class="title"><a href="tel:0909991612">0909991612 (Mr.Bách)</a></div>
             </div>
             <div class="d-flex align-items-center mb-3">
-              <div class="icon"><img class="lazy" data-src="{{ asset('img/home/icon-4.svg') }}" alt=""></div>
+              <div class="icon"><img class="lazy" data-src="{{ asset('img/home/icon-4.svg') }}" alt="icon mail"></div>
               <div class="title"><span>dangcapphaidep@gmail.com</span></div>
             </div>
             <div class="d-flex align-items-center mb-3">
-              <div class="icon"><img class="lazy" data-src="{{ asset('img/home/icon-5.svg') }}" alt=""></div>
+              <div class="icon"><img class="lazy" data-src="{{ asset('img/home/icon-5.svg') }}" alt="icon address"></div>
               <div class="title"><span>72/1b Huỳnh Văn Bánh, Phường 15, Q.Phú Nhuận</span></div>
             </div>
           </div>
@@ -39,7 +39,7 @@
     <div class="container">
       <div class="row pt-5 pb-5">
         <div class="col-lg-2 text-center">
-          <div class="logo mb-3"><a href="#"><img class="lazy" width="100" data-src="{{ asset('img/home/logo.png') }}" alt=""></a></div>
+          <div class="logo mb-3"><a href="#"><img class="lazy" width="100" data-src="{{ asset('img/home/logo.png') }}" alt="icon logo"></a></div>
           {{-- <form class="form" action="#">
             <div class="input">
               <input type="email" requied placeholder="Email">
@@ -48,9 +48,9 @@
           </form> --}}
           <div class="social mt-4">
             <div class="d-flex align-items-center justify-content-between m-0 p-0">
-              <div class="item"><a href="https://twitter.com/stdalfourvn"><img class="lazy" width="40" data-src="{{ asset('img/home/twitter-logo.png') }}" alt=""></a></div>
-              <div class="item"><a href="https://www.pinterest.com/stdalfourvn/my-pham-st-dalfour"><img class="lazy" width="50" data-src="{{ asset('img/home/pinter.png') }}" alt=""></a></div>
-              <div class="item"><a href="https://www.instagram.com/stdalfourvn/"><img class="lazy" width="35" data-src="{{ asset('img/home/instagram.png') }}" alt=""></a></div>
+              <div class="item"><a href="https://twitter.com/stdalfourvn"><img class="lazy" width="40" data-src="{{ asset('img/home/twitter-logo.png') }}" alt="twitter"></a></div>
+              <div class="item"><a href="https://www.pinterest.com/stdalfourvn/my-pham-st-dalfour"><img class="lazy" width="50" data-src="{{ asset('img/home/pinter.png') }}" alt="pinter"></a></div>
+              <div class="item"><a href="https://www.instagram.com/stdalfourvn/"><img class="lazy" width="35" data-src="{{ asset('img/home/instagram.png') }}" alt="instagram"></a></div>
             </div>
           </div>
         </div>
@@ -96,13 +96,13 @@
       <p class="m-0 p-0">© 2022 All rights reserved</p>
     </div>
   </footer>
-  <a id="top" href="#top"><img class="lazy" data-src="{{ asset('img/home/top.png') }}" alt=""></a>
+  <a id="top" href="#top"><img class="lazy" data-src="{{ asset('img/home/top.png') }}" alt="logo top"></a>
   <div class="section-search">
-    <div class="text-center pt-3 pb-3 img"><img class="lazy" data-src="{{ asset('img/home/logo-s.png') }}" alt=""></div><span class="close"><img class="lazy" data-src="{{ asset('img/home/icon-15.svg') }}" alt=""><span>Close</span></span>
+    <div class="text-center pt-3 pb-3 img"><img class="lazy" data-src="{{ asset('img/home/logo-s.png') }}" alt="logo-s"></div><span class="close"><img class="lazy" data-src="{{ asset('img/home/icon-15.svg') }}" alt="icon close"><span>Close</span></span>
     <form class="form" action="#">
       <div class="input">
         <input type="text" placeholder="Tìm kiếm sản phẩm">
-        <button type="submit"><img class="lazy" data-src="{{ asset('img/home/icon-16.svg') }}" alt=""></button>
+        <button type="submit"><img class="lazy" data-src="{{ asset('img/home/icon-16.svg') }}" alt="icon search"></button>
       </div>
     </form>
   </div>
@@ -113,7 +113,7 @@
   @endphp
   <div class="section-cart">
     <div class="head d-flex align-items-center justify-content-between">
-      <h3 class="m-0 p-0">Giỏ hàng của bạn</h3><span class="close"><img class="lazy" data-src="{{ asset('img/home/icon-15.svg') }}" alt></span>
+      <h3 class="m-0 p-0">Giỏ hàng của bạn</h3><span class="close"><img class="lazy" data-src="{{ asset('img/home/icon-15.svg') }}" alt="cart"></span>
     </div>
 	<div class="check-cart-list">
 	@if($countCart > 0)
@@ -129,7 +129,7 @@
       <div class="card">
         <div class="card-body">
           <div class="d-flex">
-            <div class="img"><img class="lazy" data-src="{{ '/timthumb.php?src='.$product->IMAGE.'&w=80&h=80&q=72&zc=2' }}" alt=""></div>
+            <div class="img"><img class="lazy" data-src="{{ '/timthumb.php?src='.$product->IMAGE.'&w=80&h=80&q=72&zc=2' }}" alt="icon thumb"></div>
             <div class="text"><span class="title">{{ $product->NAME }}</span>
               <div class="d-flex mb-3 align-items-center">
 				@if($product->DISCOUNT)

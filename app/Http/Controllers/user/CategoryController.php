@@ -45,6 +45,29 @@ class CategoryController extends Controller
 										->where('product.STATUS',1)
 										->where('product.ID', '!=', $idpro)
 										->get();
+
+					//SEO
+					if($product->SEO_TITLE){
+						SEOMeta::setTitle($product->SEO_TITLE);
+						OpenGraph::setTitle($product->SEO_TITLE);
+					}else{
+						SEOMeta::setTitle($product->NAME);
+						OpenGraph::setTitle($product->NAME);
+					}
+					if($product->SEO_DESCRIPTION){
+						SEOMeta::setDescription($product->SEO_DESCRIPTION);
+					}else{
+						SEOMeta::setDescription($product->NAME);
+					}
+					if($product->SEO_KEYWORDS){
+						SEOMeta::addKeyword($product->SEO_KEYWORDS);
+					}else{
+						SEOMeta::addKeyword($product->NAME);
+					}
+					OpenGraph::addProperty('type', 'article');
+					OpenGraph::addProperty('locale', 'pt-br');
+					OpenGraph::addProperty('locale:alternate', ['pt-pt', 'en-us']);
+					OpenGraph::addImage(env('APP_URL').$product->SEO_IMAGE, ['height' => 476, 'width' => 249]);
 					
 					$theme = 'user.modules.product.detail';
 					return view($theme, [

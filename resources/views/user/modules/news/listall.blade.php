@@ -49,6 +49,7 @@
 
 @endsection
 @section('content')
+<h1 class="d-none">Tin Tức Của ST Dalfour</h1>
 	<div class="section-blog pt-5 pb-5"> 
     <div class="container">
       <ul class="nav" role="tablist">

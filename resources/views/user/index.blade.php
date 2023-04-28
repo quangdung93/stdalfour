@@ -73,7 +73,6 @@
       }
     </script>
 @endsection
-
 @section('content')
 	@if($producthot)
 	<div class="section-1 pt-5 pb-5">
@@ -95,6 +94,7 @@
     </div>
   </div>
   @endif
+  <h1 class="d-none">Thương Hiệu Mỹ Phẩm ST Dalfour - Cội Nguồn Vẻ Đẹp Của Phụ Nữ</h1>
   @if($setting)
 	  @php
 			$pic_thumb_array = explode('|', $setting->about_gallery_list);
@@ -153,7 +153,7 @@
             <div class="col-lg-8">
               <div class="owl-carousel owl-theme">
 			        @foreach($tiktok as $tik)
-                <div class="item"><a class="card d-block" href="/tin-tuc/{{ Custom::get_url_alias('news_id='.$tik->NEWSID) }}"><img class="w-100 lazy" data-src="{{ $tik->IMAGE }}" alt="image">
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ $tik->IMAGE }}" alt="image">
                     <div class="card-body"><img class="lazy" data-src="/img/home/icon-12.svg" alt="image"></div></a></div>
               @endforeach
               </div>

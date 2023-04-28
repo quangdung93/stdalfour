@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="googlebot" content="noindex,nofollow">
+	<link rel="canonical" href="{!! url()->current() !!}"/>
 	@if($isNonGoogle)
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,6 +18,7 @@
 	{!! SEOMeta::generate() !!}
 	 <!-- Load css styles-->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
+	<link rel="shortcut icon" href="{{ asset('/img/home/logo.png') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/theme.css').'?v=2' }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/owl-carousel2/owl.carousel.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/reponsive.css').'?v=2' }}">

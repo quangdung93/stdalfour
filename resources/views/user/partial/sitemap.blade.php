@@ -20,7 +20,7 @@
                 @if($type == 'product')
                 <loc>{{url($item->URL)}}</loc>
                 @elseif($type == 'post')
-                <loc>{{url($item->URL)}}</loc>
+                <loc>{{url('tin-tuc/'.$item->URL)}}</loc>
                 @elseif($type == 'page')
                 <loc>{{url($item)}}</loc>
                 @elseif($type == 'category' || $type == 'brand')

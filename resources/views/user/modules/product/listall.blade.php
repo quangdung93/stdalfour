@@ -45,6 +45,7 @@
 @endsection
 {{-- @dd($productcat) --}}
 @section('content')
+<h1 class="d-none">Sản Phẩm Chính Hãng ST Dalfour Tại Việt Nam</h1>
 	<div class="seciton-product">
     <div class="container">
       <div class="d-flex section-filter pt-4 pb-4 justify-content-end">

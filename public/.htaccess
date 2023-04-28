@@ -21,6 +21,11 @@
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
 
+    # Include trailing slash on directory 
+    # RewriteCond %{REQUEST_URI} !(.+)/$
+    # RewriteCond %{REQUEST_FILENAME} -d
+    # RewriteRule ^(.+)$ https://stdalfour.com.vn/$1/ [R=301,L]
+
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f

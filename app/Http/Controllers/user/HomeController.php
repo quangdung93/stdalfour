@@ -17,6 +17,7 @@ class HomeController extends Controller
 {
     public function getHome()
     {
+		dd(str_ends_with(request()->url(), '/'));
 		$setting = settingModel::where('setting_id',1)->first();
 		$news = newsModel::join('news_detail', 'news.ID', '=', 'news_detail.NEWSID')->where('news.STATUS',1)->where('news.CAT_ID',1)->orderBy('news.ID','DESC')->limit(10)->get();
 		$tiktok = newsModel::join('news_detail', 'news.ID', '=', 'news_detail.NEWSID')->where('news.STATUS',1)->where('news.CAT_ID',2)->orderBy('news.ID','DESC')->limit(10)->get();

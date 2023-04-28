@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+	@php
+		$textFollow = 'follow';
+		if(isset($nofollow)){
+			$textFollow = 'nofollow';
+		}
+	@endphp
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<meta name="robots" content="noindex, nofollow">
-	<meta name="googlebot" content="noindex,nofollow">
+	<meta name="robots" content="index, {{ $textFollow }}">
+	<meta name="googlebot" content="index, {{ $textFollow }}">
 	<link rel="canonical" href="{!! url()->current() !!}"/>
 	@if($isNonGoogle)
 	<!-- Google Tag Manager -->

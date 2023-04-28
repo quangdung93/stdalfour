@@ -138,7 +138,7 @@ class NewsController extends Controller
 						SEOMeta::addKeyword($newspage->NAME);
 					}
 					$theme = 'user.modules.news.infodetail';
-					return view($theme, ['newspage' => $newspage]);
+					return view($theme, ['newspage' => $newspage, 'nofollow' => true]);
 				}else{
 					return abort(404);
 				}

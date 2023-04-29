@@ -62,7 +62,7 @@ class NewsController extends Controller
 						return abort(404);
 					}else{
 						$urlNews = route('frontend.news.detail', ['urlpost' => Custom::get_url_alias('news_id='.$news->ID)]);
-						if($urlNews != Custom::getFullUrl()){
+						if($urlNews != request()->url()){
 							SEO::setCanonical($urlNews);
 							return abort(404);
 						}

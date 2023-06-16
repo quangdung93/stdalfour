@@ -74,16 +74,16 @@
     </script>
 @endsection
 @section('content')
-	@if($producthot)
+	@if(!empty($products))
 	<div class="section-1 pt-5 pb-5">
     <div class="container">
-      <div class="heading pb-5">
-        <h2>DƯỠNG DA TRẮNG SÁNG RẠNG NGỜI </h2>
+      <div class="title mb-3">
+        <img width="150" src="{{ asset('images/flash-sale.png') }}" alt="Flash Sale"/>
       </div>
       <div class="row">
-		@foreach($producthot as $km)
+		@foreach($products as $km)
         <div class="col-lg-4">
-          <div class="card p-5"><img class="img-fluid lazy" data-src="{{ $km->IMAGE }}" alt="img">
+          <div class="card"><img class="img-fluid lazy" data-src="{{ $km->IMAGE }}" alt="img">
             <div class="card-body">
               <h4 class="card-title">{{ $km->NAME }}</h4><a class="find mb-3" href="{{ route('frontend.category.detail', ['urlpost' => Custom::get_url_alias('product_id='.$km->PRODUCTID)]) }}">Find a Store near you</a><span class="size">@if($km->PRICE == 0) Liên hệ @else {{ Custom::product_price($km->PRICE) }}đ @endif</span>
             </div>
@@ -146,7 +146,7 @@
               <div class="card">
                 <div class="card-body">
                   <h3 class="card-title">Dưỡng da trắng sáng an toàn</h3>
-                  <p>“Sản phẩm St Dalfour Beauty Whitening Excel Cream tổng hợp các tinh chất làm trắng đỉnh cao như Arbutin, Vitamin C, Glutathione có trong cây Bearberry đảm bảo da sáng mịn nhưng vẫn an toàn. Đặc biệt chất kem mềm mịn, tan nhanh, thoa  lên da cực kỳ  dễ dàng, thoa xong sẽ để lại một lớp màng ẩm mượt nhẹ cho da mà không gây nhờn rít và đổ dầu như các dòng kem trắng da khác…”</p><a href="#">Xem thêm</a>
+                  <p>“Sản phẩm St Dalfour Beauty Whitening Excel Cream tổng hợp các tinh chất làm trắng đỉnh cao như Arbutin, Vitamin C, Glutathione có trong cây Bearberry đảm bảo da sáng mịn nhưng vẫn an toàn. Đặc biệt chất kem mềm mịn, tan nhanh, thoa  lên da cực kỳ  dễ dàng, thoa xong sẽ để lại một lớp màng ẩm mượt nhẹ cho da mà không gây nhờn rít và đổ dầu như các dòng kem trắng da khác…”</p><a href="{{ url('/san-pham') }}">Xem thêm</a>
                 </div>
               </div>
             </div>
@@ -218,7 +218,7 @@
               <div class="card">
                 <div class="card-body">
                   <h3 class="card-title">Phương châm hoạt động</h3>
-                  <p>Trải qua gần 40 năm hình thành và phát triển, các sản phẩm của ST Dalfour được xếp hạng là một trong số các giải pháp làm trắng da phổ biến nhất trên thế giới. Trong suốt những năm tháng ấy, ST Dalfour vẫn luôn lấy làn da phụ nữ làm yếu tố trung tâm để không ngừng phát triển các sản phẩm chăm sóc da hoàn hảo.</p><a href="#">Xem thêm</a>
+                  <p>Trải qua gần 40 năm hình thành và phát triển, các sản phẩm của ST Dalfour được xếp hạng là một trong số các giải pháp làm trắng da phổ biến nhất trên thế giới. Trong suốt những năm tháng ấy, ST Dalfour vẫn luôn lấy làn da phụ nữ làm yếu tố trung tâm để không ngừng phát triển các sản phẩm chăm sóc da hoàn hảo.</p><a href="{{ url('/thong-tin/gioi-thieu') }}">Xem thêm</a>
                 </div>
               </div>
             </div>

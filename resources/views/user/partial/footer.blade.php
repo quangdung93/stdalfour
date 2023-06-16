@@ -39,7 +39,7 @@
     <div class="container">
       <div class="row pt-5 pb-5">
         <div class="col-lg-2 text-center">
-          <div class="logo mb-3"><a href="#"><img class="lazy" width="100" data-src="{{ asset('img/home/logo.png') }}" alt="icon logo"></a></div>
+          <div class="logo mb-3"><a ref="nofollow" href="#"><img class="lazy" width="100" data-src="{{ asset('img/home/logo.png') }}" alt="icon logo"></a></div>
           {{-- <form class="form" action="#">
             <div class="input">
               <input type="email" requied placeholder="Email">
@@ -48,9 +48,9 @@
           </form> --}}
           <div class="social mt-4">
             <div class="d-flex align-items-center justify-content-between m-0 p-0">
-              <div class="item"><a href="https://twitter.com/stdalfourvn"><img class="lazy" width="40" data-src="{{ asset('img/home/twitter-logo.png') }}" alt="twitter"></a></div>
-              <div class="item"><a href="https://www.pinterest.com/stdalfourvn/my-pham-st-dalfour"><img class="lazy" width="50" data-src="{{ asset('img/home/pinter.png') }}" alt="pinter"></a></div>
-              <div class="item"><a href="https://www.instagram.com/stdalfourvn/"><img class="lazy" width="35" data-src="{{ asset('img/home/instagram.png') }}" alt="instagram"></a></div>
+              <div class="item"><a ref="nofollow" href="https://twitter.com/stdalfourvn"><img class="lazy" width="40" data-src="{{ asset('img/home/twitter-logo.png') }}" alt="twitter"></a></div>
+              <div class="item"><a ref="nofollow" href="https://www.pinterest.com/stdalfourvn/my-pham-st-dalfour"><img class="lazy" width="50" data-src="{{ asset('img/home/pinter.png') }}" alt="pinter"></a></div>
+              <div class="item"><a ref="nofollow" href="https://www.instagram.com/stdalfourvn/"><img class="lazy" width="35" data-src="{{ asset('img/home/instagram.png') }}" alt="instagram"></a></div>
             </div>
           </div>
         </div>
@@ -58,34 +58,34 @@
           <div class="row">
             <div class="col-lg-5 item">
               <ul>
-                <li><a href="#" class="font-bold">CÔNG TY CỔ PHẦN VINAAURA [ĐỘC QUYỀN PHÂN PHỐI TẠI VIỆT NAM]</a></li>
-                <li><a href="#">HỒ CHÍ MINH: 72/1b Huỳnh Văn Bánh, Phường 15, Q.Phú Nhuận</a></li>
-                <li><a href="#">HÀ NỘI: 319 Trần Cung, Từ Liêm</a></li>
-                <li><a href="#">ĐIỆN THOẠI:  0909991612 (Mr.Bách)</a></li>
-                <li><a href="#">EMAIL: dangcapphaidep@gmail.com</a></li>
+                <li><a ref="nofollow" href="#" class="font-bold">CÔNG TY CỔ PHẦN VINAAURA [ĐỘC QUYỀN PHÂN PHỐI TẠI VIỆT NAM]</a></li>
+                <li><a ref="nofollow" href="#">HỒ CHÍ MINH: 72/1b Huỳnh Văn Bánh, Phường 15, Q.Phú Nhuận</a></li>
+                <li><a ref="nofollow" href="#">HÀ NỘI: 319 Trần Cung, Từ Liêm</a></li>
+                <li><a ref="nofollow" href="#">ĐIỆN THOẠI:  0909991612 (Mr.Bách)</a></li>
+                <li><a ref="nofollow" href="#">EMAIL: dangcapphaidep@gmail.com</a></li>
               </ul>
             </div>
             <div class="col-lg-3 item">
               <ul>
-                <li><a href="#" class="font-bold">GIỜ LÀM VIỆC</a></li>
-                <li><a href="#">+ 8:15 - 17:15 (Thứ 2 - Thứ 6)</a></li>
-                <li><a href="#">+ 8:15 - 11h45 (Thứ 7)</a></li>
+                <li><a ref="nofollow" href="#" class="font-bold">GIỜ LÀM VIỆC</a></li>
+                <li><a ref="nofollow" href="#">+ 8:15 - 17:15 (Thứ 2 - Thứ 6)</a></li>
+                <li><a ref="nofollow" href="#">+ 8:15 - 11h45 (Thứ 7)</a></li>
               </ul>
               <h4></h4>
               <ul>
-                <li><a href="#" class="font-bold">MÃ SỐ THUẾ</a></li>
-                <li><a href="#">0315089805</a></li>
+                <li><a ref="nofollow" href="#" class="font-bold">MÃ SỐ THUẾ</a></li>
+                <li><a ref="nofollow" href="#">0315089805</a></li>
               </ul>
             </div>
             <div class="col-lg-4 item">
               <ul>
-                <li><a href="#" class="font-bold">HỖ TRỢ KHÁCH HÀNG</a></li>
-                <li><a href="https://stdalfour.com.vn/thong-tin/gioi-thieu">Giới thiệu</a></li>
-                <li><a href="https://stdalfour.com.vn/thong-tin/hinh-thuc-giao-hang">Hình thức giao hàng</a></li>
-                <li><a href="https://stdalfour.com.vn/thong-tin/hinh-thuc-thanh-toan">Hình thức thanh toán</a></li>
-                <li><a href="https://stdalfour.com.vn/thong-tin/chinh-sach-doi-tra">Chính sách đổi trả</a></li>
-                <li><a href="https://stdalfour.com.vn/thong-tin/chinh-sach-bao-mat">Chính sách bảo mật</a></li>
-                <li><a href="https://stdalfour.com.vn/thong-tin/chinh-sach-bien-tap">Chính sách biên tập</a></li>
+                <li><a ref="nofollow" href="#" class="font-bold">HỖ TRỢ KHÁCH HÀNG</a></li>
+                <li><a ref="nofollow" href="https://stdalfour.com.vn/thong-tin/gioi-thieu">Giới thiệu</a></li>
+                <li><a ref="nofollow" href="https://stdalfour.com.vn/thong-tin/hinh-thuc-giao-hang">Hình thức giao hàng</a></li>
+                <li><a ref="nofollow" href="https://stdalfour.com.vn/thong-tin/hinh-thuc-thanh-toan">Hình thức thanh toán</a></li>
+                <li><a ref="nofollow" href="https://stdalfour.com.vn/thong-tin/chinh-sach-doi-tra">Chính sách đổi trả</a></li>
+                <li><a ref="nofollow" href="https://stdalfour.com.vn/thong-tin/chinh-sach-bao-mat">Chính sách bảo mật</a></li>
+                <li><a ref="nofollow" href="https://stdalfour.com.vn/thong-tin/chinh-sach-bien-tap">Chính sách biên tập</a></li>
               </ul>
             </div>
           </div>

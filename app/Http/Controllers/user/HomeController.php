@@ -18,7 +18,7 @@ class HomeController extends Controller
     public function getHome()
     {
 		$setting = settingModel::where('setting_id',1)->first();
-		$news = newsModel::join('news_detail', 'news.ID', '=', 'news_detail.NEWSID')->where('news.STATUS',1)->where('news.CAT_ID',1)->orderBy('news.ID','DESC')->limit(10)->get();
+		$news = newsModel::join('news_detail', 'news.ID', '=', 'news_detail.NEWSID')->where('news.STATUS',1)->orderBy('news.ID','DESC')->limit(10)->get();
 		$tiktok = newsModel::join('news_detail', 'news.ID', '=', 'news_detail.NEWSID')->where('news.STATUS',1)->where('news.CAT_ID',2)->orderBy('news.ID','DESC')->limit(10)->get();
 		$producthot = productModel::join('product_detail', 'product.ID', '=', 'product_detail.PRODUCTID')->where('product.STATUS',1)->where('product.HOT',1)->orderBy('ID','DESC')->limit(5)->get();
 		

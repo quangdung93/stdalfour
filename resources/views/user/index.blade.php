@@ -77,15 +77,88 @@
 	@if(!empty($products))
 	<div class="section-1 pt-5 pb-5">
     <div class="container">
-      <div class="title mb-3">
+      <div class="title mb-3 d-flex">
         <img width="150" src="{{ asset('images/flash-sale.png') }}" alt="Flash Sale"/>
+        <div class="countdown">
+          <div class="bloc-time hours" data-init-value="24">
+            <div class="figure hours hours-1">
+              <span class="top">2</span>
+              <span class="top-back">
+                <span>2</span>
+              </span>
+              <span class="bottom">2</span>
+              <span class="bottom-back">
+                <span>2</span>
+              </span>
+            </div>
+      
+            <div class="figure hours hours-2">
+              <span class="top">4</span>
+              <span class="top-back">
+                <span>4</span>
+              </span>
+              <span class="bottom">4</span>
+              <span class="bottom-back">
+                <span>4</span>
+              </span>
+            </div>
+          </div>
+      
+          <div class="bloc-time min" data-init-value="0">
+            <div class="figure min min-1">
+              <span class="top">0</span>
+              <span class="top-back">
+                <span>0</span>
+              </span>
+              <span class="bottom">0</span>
+              <span class="bottom-back">
+                <span>0</span>
+              </span>        
+            </div>
+      
+            <div class="figure min min-2">
+             <span class="top">0</span>
+              <span class="top-back">
+                <span>0</span>
+              </span>
+              <span class="bottom">0</span>
+              <span class="bottom-back">
+                <span>0</span>
+              </span>
+            </div>
+          </div>
+      
+          <div class="bloc-time sec" data-init-value="0">
+              <div class="figure sec sec-1">
+              <span class="top">0</span>
+              <span class="top-back">
+                <span>0</span>
+              </span>
+              <span class="bottom">0</span>
+              <span class="bottom-back">
+                <span>0</span>
+              </span>          
+            </div>
+      
+            <div class="figure sec sec-2">
+              <span class="top">0</span>
+              <span class="top-back">
+                <span>0</span>
+              </span>
+              <span class="bottom">0</span>
+              <span class="bottom-back">
+                <span>0</span>
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="row">
 		@foreach($products as $km)
         <div class="col-lg-4">
           <div class="card"><img class="img-fluid lazy" data-src="{{ $km->IMAGE }}" alt="img">
             <div class="card-body">
-              <h4 class="card-title">{{ $km->NAME }}</h4><a class="find mb-3" href="{{ route('frontend.category.detail', ['urlpost' => Custom::get_url_alias('product_id='.$km->PRODUCTID)]) }}">Find a Store near you</a><span class="size">@if($km->PRICE == 0) Liên hệ @else {{ Custom::product_price($km->PRICE) }}đ @endif</span>
+              <h4 class="card-title">{{ $km->NAME }}</h4><a class="find mb-3" href="{{ route('frontend.category.detail', ['urlpost' => Custom::get_url_alias('product_id='.$km->PRODUCTID)]) }}"></a><span class="size">@if($km->PRICE == 0) Liên hệ @else {{ Custom::product_price($km->PRICE) }}đ @endif</span>
             </div>
           </div>
         </div>
@@ -109,8 +182,7 @@
 		  <div class="slides-custom owl-carousel owl-theme style1_dots">
           @foreach ($pic_thumb_array as $pic_thumb_array_val)
           <div class="item">
-            <a class="card d-block" href="javascript:;"><img class="w-100 lazy" data-src="{{ '/images/services/'.$pic_thumb_array_val }}" alt="image">
-              <div class="card-body"><img class="lazy" data-src="/img/home/icon-11.svg" alt="image"></div></a>
+            <a class="card d-block" href="javascript:;"><img class="w-100 lazy" data-src="{{ '/images/services/'.$pic_thumb_array_val }}" alt="image"></a>
           </div>
           @endforeach
 		  </div>
@@ -192,7 +264,7 @@
               <div class="card">
                 <div class="card-body">
                   <h3 class="card-title">Chăm sóc da tối ưu</h3>
-                  <p>Mỗi sản phẩm St Dalfour khi ra đời gần như đáp ứng đầy đủ mọi nhu cầu chăm sóc, bảo vệ làn da của tín đồ làm đẹp như khả năng chống lão hóa da, dưỡng da trắng sáng, chống nắng…Một số công thức được thiết kế để phù hợp với da bị mụn hoặc nhạy cảm. Bất kể nhu cầu của bạn là gì, những sản phẩm của ST Dalfour đều mang lại kết quả mà bạn cảm thấy hài lòng.</p><a href="#">Xem thêm</a>
+                  <p>Mỗi sản phẩm St Dalfour khi ra đời gần như đáp ứng đầy đủ mọi nhu cầu chăm sóc, bảo vệ làn da của tín đồ làm đẹp như khả năng chống lão hóa da, dưỡng da trắng sáng, chống nắng…Một số công thức được thiết kế để phù hợp với da bị mụn hoặc nhạy cảm. Bất kể nhu cầu của bạn là gì, những sản phẩm của ST Dalfour đều mang lại kết quả mà bạn cảm thấy hài lòng.</p><a href="{{ url('/tin-tuc/trang-da') }}">Xem thêm</a>
                 </div>
               </div>
             </div>

@@ -2691,8 +2691,9 @@ h2 strong {
 .countdown {
   width: 100%;
   margin: 0 auto;
-  zoom: 0.3;
-  margin-left: 50px;
+  zoom: 0.2;
+  margin-left: 65px;
+  margin-top: 10px;
 }
 .countdown .bloc-time {
   float: left;

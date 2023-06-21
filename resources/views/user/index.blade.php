@@ -224,10 +224,12 @@
             </div>
             <div class="col-lg-8">
               <div class="owl-carousel owl-theme">
-			        @foreach($tiktok as $tik)
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ $tik->IMAGE }}" alt="image">
-                    <div class="card-body"><img class="lazy" data-src="/img/home/icon-12.svg" alt="image"></div></a></div>
-              @endforeach
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/ngan-da-bat-nang.png') }}" alt="image">
+                </a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/giam-sam-nam.png') }}" alt="image">
+                </a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/trang-da.png') }}" alt="image">
+                </a></div>
               </div>
             </div>
           </div>
@@ -244,16 +246,22 @@
             </div>
             <div class="col-lg-8">
               <div class="owl-carousel owl-theme">
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img8.png" alt="image">
-                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img9.png" alt="image">
-                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img8.png" alt="image">
-                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img9.png" alt="image">
-                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img8.png" alt="image">
-                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-1.png') }}" alt="image">
+                </a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-2.png') }}" alt="image">
+                </a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-3.png') }}" alt="image">
+                </a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-4.png') }}" alt="image">
+                </a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-5.png') }}" alt="image">
+                </a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-6.png') }}" alt="image">
+                </a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-7.png') }}" alt="image">
+                </a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-8.png') }}" alt="image">
+                </a></div>
               </div>
             </div>
           </div>
@@ -270,16 +278,12 @@
             </div>
             <div class="col-lg-8">
               <div class="owl-carousel owl-theme">
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img8.png" alt="image">
-                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img9.png" alt="image">
-                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img8.png" alt="image">
-                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img9.png" alt="image">
-                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img8.png" alt="image">
-                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/cong-dung-1.png') }}" alt="image">
+                </a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/cong-dung-2.png') }}" alt="image">
+                </a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/cong-dung-3.png') }}" alt="image">
+                </a></div>
               </div>
             </div>
           </div>
@@ -296,16 +300,12 @@
             </div>
             <div class="col-lg-8">
               <div class="owl-carousel owl-theme">
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img8.png" alt="image">
-                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img9.png" alt="image">
-                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img8.png" alt="image">
-                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img9.png" alt="image">
-                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="img/home/img8.png" alt="image">
-                    <div class="card-body"><img class="lazy" data-src="img/home/icon-12.svg" alt="image"></div></a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/su-menh-1.png') }}" alt="image">
+                </a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/su-menh-2.png') }}" alt="image">
+                </a></div>
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/su-menh-3.png') }}" alt="image">
+                </a></div>
               </div>
             </div>
           </div>

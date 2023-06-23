@@ -45,6 +45,16 @@
 @endsection
 {{-- @dd($productcat) --}}
 @section('content')
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <ul class="breadcrumbs">
+        <li><a href="/">Trang chủ</a></li>
+        <li>/ <a href="/san-pham">Sản phẩm</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
 <h1 class="d-none">Sản Phẩm Chính Hãng ST Dalfour Tại Việt Nam</h1>
 	<div class="seciton-product">
     <div class="container">

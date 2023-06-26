@@ -26,7 +26,9 @@ class CategoryController extends Controller
 		$productcat = $productcat->paginate(12);
 		$total = $productcat->total();
 		//SEO
-		SEO::setTitle('Mỹ phẩm làm đẹp với những thương hiệu hàng đầu');
+		SEO::setTitle('Mua Sản Phẩm ST Dalfour Cam Kết 100% Chính Hãng ');
+		SEO::setDescription('Mỹ phẩm ST Dalfour cam kết 100% hàng chính hãng. Ưu đãi giá tốt mỗi ngày. Miễn phí giao hàng nhanh toàn quốc. Dưỡng trắng da. Chống nắng. Đặt hàng ngay!');
+		SEO::metatags('my pham, cham soc da, my pham nhat ban, my pham han quoc');
 		$theme = 'user.modules.product.listall';
 		return view($theme, ['productcat' => $productcat, 'total' => $total]);
 	}

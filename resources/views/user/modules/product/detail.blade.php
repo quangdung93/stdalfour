@@ -68,6 +68,7 @@
         <ul class="breadcrumbs">
           <li><a href="/">Trang chủ</a></li>
           <li>/ <a href="/san-pham">Sản phẩm</a></li>
+          <li>/ <a href="/san-pham">{{ $product->NAME }}</a></li>
         </ul>
       </div>
     </div>
@@ -104,25 +105,7 @@
             </div><span>4.9 (123) Write a review</span>
           </div>
           <div class="description mb-3">
-			  <span class="mb-2 d-block">Discover complexion perfection</span>
             <p>{{ $product->SUMMARY }}</p>
-          </div>
-          <div class="pt-3 pb-3">
-            <div class="line-bottom"></div>
-          </div>
-          <div class="color"><span class="d-block mb-3">Choose color: Mint</span>
-            <ul class="m-0 p-0 d-flex">
-              <li class="active"><a class="green d-block"></a></li>
-              <li><a class="pink d-block"></a></li>
-              <li><a class="red d-block"></a></li>
-            </ul>
-          </div>
-          <div class="pt-3 pb-3">
-            <div class="line-bottom"></div>
-          </div>
-          <div class="shipdate">Expected delivery date for Vietnam: <span>10 Jun 2022</span></div>
-          <div class="pt-3 pb-3">
-            <div class="line-bottom"></div>
           </div>
           <div class="price d-flex align-items-center justify-content-between"><span>{{ number_format($product->PRICE).'đ' }}</span>
             <button type="button" class="add_buy_product_right">Add to cart</button>
@@ -130,7 +113,6 @@
           <div class="pt-3 pb-3">
             <div class="line-bottom"></div>
           </div>
-          <div class="warranty d-flex align-items-start"><img class="lazy" data-src="/img/detail/icon12.svg" alt=""><span>WARRANTY<br>2 years</span></div>
         </div>
       </div>
     </div>

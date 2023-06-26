@@ -24,8 +24,8 @@ class HomeController extends Controller
 		
 		$products = productModel::join('product_detail', 'product.ID', '=', 'product_detail.PRODUCTID')->get();
 		//SEO
-		SEO::setTitle('Stdalfour.com.vn: Sứ Mệnh Làm Đẹp Cho Phụ Nữ Việt');
-		SEO::setDescription('Stdalfour.com.vn: chuyên phân phối mỹ phẩm nhập khẩu giá tốt, mỹ phẩm làm đẹp chất lượng cao từ các thương hiệu nổi tiếng trên thế giới.');
+		SEO::setTitle('ST dalfour - Thương hiệu mỹ phẩm trắng da được tin dùng nhất Việt Nam');
+		SEO::setDescription('ST Dalfour - thương hiệu mỹ phẩm đa dạng các sản phẩm làm sáng trắng da, chống nắng an toàn…Với phương châm lấy phụ nữ làm nhân vật trung tâm, mang đến những giải pháp chăm sóc da hoàn mỹ…');
 		SEO::metatags('my pham, cham soc da, my pham nhat ban, my pham han quoc');
 		$theme = 'user.index';
 		return view($theme, [

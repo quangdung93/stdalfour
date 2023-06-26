@@ -158,7 +158,7 @@
         <div class="col-lg-4">
           <div class="card"><img class="img-fluid lazy" data-src="{{ $km->IMAGE }}" alt="img">
             <div class="card-body">
-              <h4 class="card-title">{{ $km->NAME }}</h4><a class="find mb-3" href="{{ route('frontend.category.detail', ['urlpost' => Custom::get_url_alias('product_id='.$km->PRODUCTID)]) }}"></a><span class="size">@if($km->PRICE == 0) Liên hệ @else {{ Custom::product_price($km->PRICE) }}đ @endif</span>
+              <h4 class="card-title"><a class="find mb-3" href="{{ route('frontend.category.detail', ['urlpost' => Custom::get_url_alias('product_id='.$km->PRODUCTID)]) }}">{{ $km->NAME }}</a></h4><span class="size">@if($km->PRICE == 0) Liên hệ @else {{ Custom::product_price($km->PRICE) }}đ @endif</span>
             </div>
           </div>
         </div>
@@ -246,21 +246,13 @@
             </div>
             <div class="col-lg-8">
               <div class="owl-carousel owl-theme">
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-1.png') }}" alt="image">
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-11.png') }}" alt="image">
                 </a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-2.png') }}" alt="image">
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-22.png') }}" alt="image">
                 </a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-3.png') }}" alt="image">
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-33.png') }}" alt="image">
                 </a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-4.png') }}" alt="image">
-                </a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-5.png') }}" alt="image">
-                </a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-6.png') }}" alt="image">
-                </a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-7.png') }}" alt="image">
-                </a></div>
-                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-8.png') }}" alt="image">
+                <div class="item"><a class="card d-block" href="#"><img class="w-100 lazy" data-src="{{ asset('images/thanh-phan-44.png') }}" alt="image">
                 </a></div>
               </div>
             </div>

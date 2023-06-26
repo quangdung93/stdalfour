@@ -20,8 +20,10 @@ use Symfony\Component\HttpFoundation\Cookie;
 class NewsController extends Controller
 {
 	public function getNews(){
-		SEO::setTitle('Kinh nghiệm làm đẹp');
 		$news = DB::table('news')->join('news_detail', 'news.ID', '=', 'news_detail.NEWSID')->where('news.STATUS',1)->orderBy('news.ID','DESC')->paginate(20);
+		SEO::setTitle('Kiến Thức Làm Đẹp Dành Cho Phái Đẹp | ST Dalfour');
+		SEO::setDescription('Tổng hợp các thông tin kiến thức, cẩm nang làm đẹp, kinh nghiệp chăm sóc da, chăm sóc sức khỏe. Review mỹ phẩm hot, xu hướng mới nhất…');
+		SEO::metatags('my pham, cham soc da, my pham nhat ban, my pham han quoc');
 		$theme = 'user.modules.news.listall';
 		return view($theme, ['news' => $news]);
 	}

@@ -241,6 +241,7 @@
 																@if($pic_thumb_array)
 																	@foreach ($pic_thumb_array as $keyim => $pic_thumb_array_val)
 																	<div class="col-md-2 check-up-image">
+																		<span class="text-center">{{ $loop->iteration }}</span>
 																		<a href="javascript:;" onclick="BrowseServerListAlbum({{ $keyim }}, {{ ($keyim+1).$keyim.($keyim+1) }});">
 																			<img id="{{ ($keyim+1).$keyim.($keyim+1) }}" style="width: 100%;" src="{{ $pic_thumb_array_val->BASE_URL }}">
 																		</a>

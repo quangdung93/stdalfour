@@ -85,14 +85,24 @@
     </nav>
 	@php
 		$getSilde = DB::table('slider')->where('status',1)->get();
+    $productSlide = [12 => 4, 14 => 5, 13 => 6];
 	@endphp
 	@if($getSilde)
     <div class="owl-carousel owl-theme slider">
 	  @foreach($getSilde as $slide)
+      
       @if($loop->iteration > 1 && !$isNonGoogle)
         @break
       @endif
+      
+
+      @if(isset($product))
+        @if($productSlide[$product->ID] == $slide->id)
+          <div class="item"><img class="w-100" src="{{ '/images/slider/'.$slide->image }}" alt="image"></div>
+        @endif
+      @else
 		  <div class="item"><img class="w-100" src="{{ '/images/slider/'.$slide->image }}" alt="image"></div>
+      @endif
 	  @endforeach
     </div>
 	@endif

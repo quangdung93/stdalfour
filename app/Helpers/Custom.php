@@ -2,18 +2,26 @@
 
 namespace App\Helpers;
 use DB;
-use Storage;
 use Cache;
 use Route;
 use Cookie;
-use App\Http\Models\memberModel;
+use Storage;
+use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Models\memberModel;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Schema;
 
 class Custom{
+
+	public static function getAgoTime($date){
+		Carbon::setLocale('vi');
+	    $dt = Carbon::createFromFormat('Y-m-d H:i:s', $date);
+	    $now = Carbon::now();
+	    return $dt->diffForHumans($now); 
+	}
 	
 	public static function checkAuthUser(){
 		$datauser = NULL;

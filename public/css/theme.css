@@ -973,6 +973,11 @@ a.text-link{
 .section-review .block-3 .star span:hover, .section-review .block-3 .star span:hover ~ span {
   background: url("../img/detail/icon2.svg");
 }
+
+.rating-active{
+  background: url("../img/detail/icon2.svg") !important;
+}
+
 .section-review .block-3 .form .inner {
   position: relative;
 }
@@ -1163,6 +1168,18 @@ a.text-link{
   height: 36px;
   border-radius: 50%;
 }
+
+.list-image-comment{
+  margin-top: 15px;
+  padding: 0;
+}
+
+.list-image-comment li{
+  display: inline-block;
+  margin-right: 5px
+  list-style: none;
+}
+
 .section-review .block-5 .avatar .bg {
   background: #C4C4C4;
   width: 36px;

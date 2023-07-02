@@ -3,18 +3,19 @@
 namespace App\Http\Controllers\user;
 
 use DB;
-use Custom;
 use SEO;
 use Mail;
+use Custom;
 use SEOMeta;
-use OpenGraph;
 use Twitter;
-use App\Http\Models\productModel;
+use OpenGraph;
+use App\Models\Rating;
 use Illuminate\Http\Request;
+use App\Http\Models\productModel;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
-use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
 {
@@ -70,10 +71,20 @@ class CategoryController extends Controller
 					OpenGraph::addProperty('locale', 'pt-br');
 					OpenGraph::addProperty('locale:alternate', ['pt-pt', 'en-us']);
 					OpenGraph::addImage(env('APP_URL').$product->SEO_IMAGE, ['height' => 476, 'width' => 249]);
-					
+
+					$ratingQuery = Rating::where('product_id', $product->ID)
+										->where('status', 1)
+										->orderBy('id', 'DESC');
+
+					$avgVote = $ratingQuery->avg('vote');
+
+					$ratings = $ratingQuery->get();
+
 					$theme = 'user.modules.product.detail';
 					return view($theme, [
 						'product' => $product,
+						'ratings' => $ratings,
+						'avgVote' => $avgVote,
 						'relatedProduct' => $relatedProduct,
 					]);
 				}

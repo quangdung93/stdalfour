@@ -149,19 +149,24 @@
   <div class="section-review pb-5">
     <div class="container">
       <div class="text-center">
-        <h2 class="mb-5">We got glowing reviews</h2>
+        <h3 class="mb-5">Đánh giá và Bình luận</h3>
       </div>
       <div class="d-flex content">
         <div class="block-1 pe-5">
-          <div class="d-flex mb-5"><span class="number">4.8</span>
+          <div class="d-flex mb-5"><span class="number">{{ round($avgVote, 1) }}</span>
+            @php
+              $avgVoteNumber = round($avgVote);
+            @endphp
             <div class="d-block">
               <div class="star mb-2">
-                <img class="lazy" data-src="/img/detail/icon2.svg" alt="">
-                <img class="lazy" data-src="/img/detail/icon2.svg" alt="">
-                <img class="lazy" data-src="/img/detail/icon2.svg" alt="">
-                <img class="lazy" data-src="/img/detail/icon2.svg" alt="">
-                <img class="lazy" data-src="/img/detail/icon3.svg" alt="">
-              </div><span>499 nhận xét</span>
+                @for($i = 0; $i < 5; $i++)
+                  @if($i < $avgVoteNumber)
+                  <img class="lazy" data-src="/img/detail/icon2.svg" alt="">
+                  @else
+                  <img class="lazy" data-src="/img/detail/icon3.svg" alt="">
+                  @endif
+                @endfor
+              </div><span>{{ $ratings->count() }} nhận xét</span>
             </div>
           </div>
           <button class="text-uppercase">Gửi đánh giá và bình luận</button>
@@ -234,23 +239,34 @@
       </div>
       <div class="block-3 pt-5">
         <div class="mb-2"><span>Bạn  thấy sản phẩm như thế nào ?<br>(Chọn sao nhé)</span>
-          <div class="star"><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="star rating-star">
+            <span data-vote="5"></span>
+            <span data-vote="4"></span>
+            <span data-vote="3"></span>
+            <span data-vote="2"></span>
+            <span data-vote="1"></span>
+          </div>
         </div>
-        <form class="form" action="#">
+
+        <form id="frm-rating" class="form" data-action="{{ route('frontend.rating.add') }}">
           <div class="inner mb-3">
-            <textarea rows="4" cols="50" placeholder="Đánh giá chi tiết"></textarea>
-            <input type="file" id="myfile" name="myfile"><img class="lazy" data-src="/img/detail/icon4.svg" alt="">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="product_id" value="{{ $product->ID }}">
+            <input type="hidden" id="input-vote" name="vote" value="">
+            <textarea rows="4" cols="50" id="comment" name="comment" placeholder="Đánh giá chi tiết"></textarea>
+            <input type="file" class="upload-image" id="myfile" name="myfile"><img class="lazy" data-src="/img/detail/icon4.svg" alt="">
           </div>
           <div class="d-flex justify-content-between">
             <div class="d-flex">
-              <input class="input" type="text" placeholder="Họ Tên" required>
-              <input class="input" type="text" placeholder="Email" required>
+              <input class="input" id="input-name" type="text" name="name" placeholder="Họ Tên" required>
+              <input class="input" id="input-phone" type="text" name="phone" placeholder="Điện thoại">
             </div>
             <button type="submit">Gửi</button>
           </div>
         </form>
       </div>
-      <div class="block-4 pt-5">
+      <ul class="list-image-comment"></ul>
+      {{-- <div class="block-4 pt-5">
         <h3 class="mb-3">Hình ảnh từ các bài đánh giá</h3>
         <div class="owl-carousel owl-theme">
           <div class="item"><img class="w-100 lazy" data-src="/img/detail/img27.png" alt="image"></div>
@@ -264,66 +280,49 @@
           <div class="item"><img class="w-100 lazy" data-src="/img/detail/img30.png" alt="image"></div>
           <div class="item"><img class="w-100 lazy" data-src="/img/detail/img31.png" alt="image"></div>
         </div>
-      </div>
+      </div> --}}
       <div class="block-5 pt-5">
         <h3 class="mb-3">Danh sách bài đánh giá</h3>
+        @if($ratings)
+        @foreach($ratings as $rating)
         <div class="row danhgia pt-3 pb-3">
           <div class="col-lg-3">
             <div class="star mb-2">
-              <img class="lazy" data-src="/img/detail/icon2.svg" alt="">
-              <img class="lazy" data-src="/img/detail/icon3.svg" alt="">
-              <img class="lazy" data-src="/img/detail/icon3.svg" alt="">
-              <img class="lazy" data-src="/img/detail/icon3.svg" alt="">
-              <img class="lazy" data-src="/img/detail/icon3.svg" alt="">
-            </div><span class="time">Cách 12 giờ</span>
+              @for($i = 0; $i < 5; $i++)
+                @if($i < $rating->vote)
+                <img class="lazy" data-src="/img/detail/icon2.svg" alt="">
+                @else
+                <img class="lazy" data-src="/img/detail/icon3.svg" alt="">
+                @endif
+              @endfor
+            </div>
+            <span class="time">{{ App\Helpers\Custom::getAgoTime($rating->created_at) }}</span>
           </div>
           <div class="col-lg-6 pe-5 d-center">
-            <h5 class="mb-2">Uy tín lắm nha</h5>
-            <p>Đầu tiên là hàng đc bọc khá ổn ko gọi là kĩ nhưng cũng khá chắc chắn chất của em này là gel đặc rất thơm luôn shipper thì rất vui tính và thân thiện tuy muộn mất mấy ngày vì mình ko cầm</p>
-            <div class="img mb-3"><img class="lazy" data-src="/img/detail/img25.png" alt=""><img class="lazy" data-src="/img/detail/img26.png" alt=""></div>
+            <p>{{ $rating->comment }}</p>
+            @php
+              $imagesList = explode(',', $rating->images);
+            @endphp
+            @if($imagesList)
+            <div class="img mb-3">
+              @foreach($imagesList as $key => $image)
+                <img width="150" src="{{ asset('storage/storage/rating/' .$image) }}" alt="">
+              @endforeach
+            </div>
+            @endif
             <div class="review">
-              <div class="d-flex align-items-center">
+              {{-- <div class="d-flex align-items-center">
                 <div class="like"><img class="lazy" data-src="/img/detail/icon9.svg" alt=""><span>Hữu ích (1)</span></div>
                 <div class="answer">Gửi trả lời</div>
-              </div>
-              <form class="form mt-4" action="#">
-                <div class="d-flex"><img class="img" src="/img/detail/avatar1.png" alt="">
-                  <div class="input">
-                    <input type="text" placeholder="Viết câu trả lời">
-                    <button type="button"> <img class="lazy" data-src="/img/detail/icon13.png" alt=""></button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div class="col-lg-3 ps-5">
-            <div class="d-flex">
-              <div class="avatar"><img class="lazy" data-src="/img/detail/avatar2.png" alt=""></div>
-              <div class="title"><span class="d-block">Nguyễn Ngọc An </span><span class="date d-block">Đã tham gia 4 năm   </span></div>
-            </div>
-          </div>
-        </div>
-        <div class="row danhgia pt-3 pb-3">
-          <div class="col-lg-3">
-            <div class="star mb-2"><img class="lazy" data-src="/img/detail/icon2.svg" alt=""><img class="lazy" data-src="/img/detail/icon3.svg" alt=""><img class="lazy" data-src="/img/detail/icon3.svg" alt=""><img class="lazy" data-src="/img/detail/icon3.svg" alt=""><img class="lazy" data-src="/img/detail/icon3.svg" alt=""></div><span class="time">Cách 12 giờ</span>
-          </div>
-          <div class="col-lg-6 pe-5 d-center">
-            <h5 class="mb-2">Uy tín lắm nha</h5>
-            <p>Đầu tiên là hàng đc bọc khá ổn ko gọi là kĩ nhưng cũng khá chắc chắn chất của em này là gel đặc rất thơm luôn shipper thì rất vui tính và thân thiện tuy muộn mất mấy ngày vì mình ko cầm</p>
-            <div class="img mb-3"><img class="lazy" data-src="/img/detail/img25.png" alt=""><img class="lazy" data-src="/img/detail/img26.png" alt=""></div>
-            <div class="review">
-              <div class="d-flex align-items-center">
-                <div class="like"><img class="lazy" data-src="/img/detail/icon9.svg" alt=""><span>Hữu ích (1)</span></div>
-                <div class="answer">Gửi trả lời</div>
-              </div>
-              <form class="form mt-4" action="#">
+              </div> --}}
+              {{-- <form class="form mt-4" action="#">
                 <div class="d-flex"><img class="img lazy" data-src="/img/detail/avatar1.png" alt="">
                   <div class="input">
                     <input type="text" placeholder="Viết câu trả lời">
                     <button type="button"> <img class="lazy" data-src="/img/detail/icon13.png" alt=""></button>
                   </div>
                 </div>
-              </form>
+              </form> --}}
             </div>
           </div>
           <div class="col-lg-3 ps-5">
@@ -331,11 +330,13 @@
               <div class="avatar">
                 <div class="bg"><img class="lazy" data-src="/img/detail/icon14.png" alt=""></div>
               </div>
-              <div class="title"><span class="d-block">Nguyễn Ngọc An </span><span class="date d-block">Đã tham gia 4 năm    </span></div>
+              <div class="title"><span class="d-block">{{ $rating->name_user }} </span></div>
             </div>
           </div>
         </div>
-        <div class="paging pt-5 pb-5">
+        @endforeach
+        @endif
+        {{-- <div class="paging pt-5 pb-5">
           <ul class="m-0 p-0 d-flex align-items-center justify-content-center">
             <li><a class="prev" href="#"><img class="lazy" data-src="/img/detail/icon14.svg" alt=""></a></li>
             <li><a class="page active" href="#">1</a></li>
@@ -344,7 +345,7 @@
             <li><a class="page" href="#">4</a></li>
             <li><a class="next" href="#"><img class="lazy" data-src="/img/detail/icon15.svg" alt=""></a></li>
           </ul>
-        </div>
+        </div> --}}
       </div>
     </div>
   </div>
@@ -352,6 +353,7 @@
 
 @section('js')
 	<script type="text/javascript">
+    const URL_MAIN = '{{ url("/") }}';
 		jQuery.fn.extend({
 			live: function (event, callback) {
 				if (this.selector) {
@@ -361,6 +363,122 @@
 			}
 		});
 		$(document).ready(function(){
+
+      $(document).on('click', '.rating-star span', function(e){
+        e.preventDefault();
+        $('.rating-star span').removeClass('rating-active');
+        let vote = $(this).data('vote');
+        $('#input-vote').val(vote);
+        $('.rating-star span').each(function(){
+          if(vote >= $(this).data('vote')){
+            $(this).addClass('rating-active');
+          }
+        });
+
+        $(this).addClass('rating-active');
+      });
+
+      $(document).on('submit', '#frm-rating', function(e){
+        e.preventDefault();
+
+        let images = [];
+        $('.list-image-comment li').each(function(){
+          let item = $(this).data('img');
+
+          if(item){
+            images.push(item);
+          }
+        })
+
+        if($('#input-vote').val() == ""){
+          alert('Bạn chưa chọn sao đánh giá')
+        }
+        else if($('#comment').val() == ""){
+          alert('Bạn chưa nhập nội dung đánh giá')
+        }
+        else if($('#input-name').val() == ""){
+          alert('Bạn chưa nhập họ tên')
+        }
+        else{
+          $.ajax({
+              headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              },
+              method: 'POST',
+              url: $(this).data('action'),
+              data: `${$(this).serialize()}&images=${images}`,
+              success: function (response) {
+                  if (response.error) {
+                    alert(response.message)
+                  }
+                  else{
+                    alert(response.message);
+                    window.location.reload();
+                  }
+              }
+          });
+        }
+
+      });
+
+      $(document).on('change', '.upload-image', function(e){
+            // var data_index = $(this).data("index");
+            var files = $(this)[0].files,
+                listFiles = [];
+            if(files.length > 4){
+                alert('Chỉ được upload tối đa 4 ảnh');
+                return false;
+            }
+            
+            for(let i = 0; i < files.length; i++){
+                if(files[i].size > 5242880){ 
+                    alert('Dung lượng ảnh [' + files[i].name + '] không được vượt quá 5Mb');
+                }else{
+                    listFiles.push(files[i]);
+                }
+            }
+            if(listFiles.length > 0) handleImageUpload(listFiles);
+        });
+
+      function handleImageUpload(files){
+
+            var frmData = new FormData();
+
+            for(let i = 0; i < files.length; i++){
+                frmData.append('files[]', files[i]);
+            }
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: "POST",
+                url: '{{ route("upload.image") }}',
+                data: frmData,
+                async: true,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    if(data.error){
+                      alert(data.message);
+                    }
+                    else{
+                        let html = '';
+                        if(data.data.length > 0){
+                            $.each(data.data, function(index, item) {
+                                html += `<li data-img="${item.split('/').pop()}"><img width="150" src="${URL_MAIN}/storage/${item}" alt=""><span class="remove-img-cmt"><i class="iconhita-close"></i></span></li>`;
+                            });
+                        }
+                        $('.list-image-comment').prepend(html);
+                    }
+                },
+                error: function (n) {
+
+                }
+            });
+        }
+
 			$(".add_buy_product_right").click(function () {
 				$('#modal-1').modal('show');
 				$('#checkout').html('<div id="loadercart"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>');

@@ -4,18 +4,19 @@ namespace App\Http\Controllers\admin;
 
 use DB;
 use Cache;
-use Custom;
 use Cookie;
+use Custom;
 use Carbon\Carbon;
 
-use Illuminate\Support\Facades\Lang;
-use Illuminate\Support\Facades\Validator;
+use App\Http\Requests;
+use Illuminate\Http\Request;
 
 use App\Http\Models\memberModel;
 
-use Illuminate\Http\Request;
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
@@ -60,6 +61,8 @@ class LoginController extends Controller
             );
             $member = $this->memberModel->memberInforRecord($querySql);
 
+
+
 			if(!empty($member)){
 				if($member->enable == 0){
                     return redirect()->back()->with('warning',lang::get('member.err_author_disable'));
@@ -70,7 +73,16 @@ class LoginController extends Controller
 				Cache::put('user-is-online-' . $member->iduser, true, $expiresAt);
 				session_set_cookie_params(0, '/', '.tuvu.com');
                 setcookie("userImageId", $member->iduser, time() + 60 * 24 * 3600, '/', '.tuvu.com');
-				return redirect()->route('admin.index')->with('sucsses', lang::get('member.success_author_login'));
+
+                $credentials = [
+                    'username' => $request->username,
+                    'password' => $request->password,
+                    'enable' => 1
+                ];
+        
+                if (Auth::attempt($credentials)) {
+                    return redirect()->route('admin.index')->with('sucsses', lang::get('member.success_author_login'));
+                }
 			}else{
 				return redirect()->back()->with('warning', lang::get('member.err_author_incorrect') );
 			}

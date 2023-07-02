@@ -108,6 +108,8 @@ Route::group(['namespace' => 'user'], function () {
 	Route::get("/thong-tin/{urlpost}",'NewsController@getInfo')->name('frontend.news.info');
 	Route::get("/gio-hang", 'CartController@checkGiohang')->name('frontend.giohang');
 	Route::post("/add_cart", 'CartController@addCart')->name('frontend.cart.add');
+	Route::post("/upload-image", 'RatingController@uploadImageAction')->name('upload.image');
 	Route::post("/save_checkout", 'CartController@checkoutCart')->name('frontend.cart.checkout');
 	Route::get('/thanh-toan-tao-tai-khoan', 'CartController@cartReturn')->name('cart-return');
+	Route::post("/create-rating", 'RatingController@createRatingAction')->name('frontend.rating.add');
 });

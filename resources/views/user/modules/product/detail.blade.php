@@ -266,24 +266,36 @@
         </form>
       </div>
       <ul class="list-image-comment"></ul>
-      {{-- <div class="block-4 pt-5">
+      <div class="block-4 pt-5">
         <h3 class="mb-3">Hình ảnh từ các bài đánh giá</h3>
+        @php
+          $imgRating = [];
+          if($ratings){
+            $imagesArr = $ratings->pluck('images')->toArray();
+            $imagesArr = array_filter($imagesArr);
+
+            if($imagesArr){
+              foreach ($imagesArr as $img) {
+                if($img){
+                  $temp = explode(',', $img);
+                  $imgRating += $temp;
+                }
+              }
+            }
+          }
+        @endphp
+
+        @if($ratings && $imgRating)
         <div class="owl-carousel owl-theme">
-          <div class="item"><img class="w-100 lazy" data-src="/img/detail/img27.png" alt="image"></div>
-          <div class="item"><img class="w-100 lazy" data-src="/img/detail/img28.png" alt="image"></div>
-          <div class="item"><img class="w-100 lazy" data-src="/img/detail/img29.png" alt="image"></div>
-          <div class="item"><img class="w-100 lazy" data-src="/img/detail/img30.png" alt="image"></div>
-          <div class="item"><img class="w-100 lazy" data-src="/img/detail/img31.png" alt="image"></div>
-          <div class="item"><img class="w-100 lazy" data-src="/img/detail/img27.png" alt="image"></div>
-          <div class="item"><img class="w-100 lazy" data-src="/img/detail/img28.png" alt="image"></div>
-          <div class="item"><img class="w-100 lazy" data-src="/img/detail/img29.png" alt="image"></div>
-          <div class="item"><img class="w-100 lazy" data-src="/img/detail/img30.png" alt="image"></div>
-          <div class="item"><img class="w-100 lazy" data-src="/img/detail/img31.png" alt="image"></div>
+          @foreach($imgRating as $value)
+          <div class="item"><img class="w-100 lazy" data-src="{{ asset('/storage/storage/rating/'. $value) }}" alt="image"></div>
+          @endforeach
         </div>
-      </div> --}}
+        @endif
+      </div>
+      @if($ratings)
       <div class="block-5 pt-5">
         <h3 class="mb-3">Danh sách bài đánh giá</h3>
-        @if($ratings)
         @foreach($ratings as $rating)
         <div class="row danhgia pt-3 pb-3">
           <div class="col-lg-3">
@@ -315,14 +327,20 @@
                 <div class="like"><img class="lazy" data-src="/img/detail/icon9.svg" alt=""><span>Hữu ích (1)</span></div>
                 <div class="answer">Gửi trả lời</div>
               </div> --}}
-              {{-- <form class="form mt-4" action="#">
+              @php
+                $userId = Cookie::get('userAdId');
+              @endphp
+
+              @if($userId)
+              <form class="form mt-4" action="#">
                 <div class="d-flex"><img class="img lazy" data-src="/img/detail/avatar1.png" alt="">
                   <div class="input">
                     <input type="text" placeholder="Viết câu trả lời">
                     <button type="button"> <img class="lazy" data-src="/img/detail/icon13.png" alt=""></button>
                   </div>
                 </div>
-              </form> --}}
+              </form>
+              @endif
             </div>
           </div>
           <div class="col-lg-3 ps-5">
@@ -335,7 +353,6 @@
           </div>
         </div>
         @endforeach
-        @endif
         {{-- <div class="paging pt-5 pb-5">
           <ul class="m-0 p-0 d-flex align-items-center justify-content-center">
             <li><a class="prev" href="#"><img class="lazy" data-src="/img/detail/icon14.svg" alt=""></a></li>
@@ -347,6 +364,7 @@
           </ul>
         </div> --}}
       </div>
+      @endif
     </div>
   </div>
 @endsection

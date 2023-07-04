@@ -7,6 +7,7 @@
     <meta name="csrf_token" content="{{ csrf_token() }}" />
     <meta name="description" content="Tour">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Admin - @yield('title-admin')</title>
     <!-- page css -->
     <link href="/backend/css/pages/login-register-lock.css" rel="stylesheet">

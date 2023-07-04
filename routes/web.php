@@ -79,7 +79,10 @@ Route::group(['namespace' => 'admin'], function () {
 		Route::get('/contact/xoa/{id}', 'ContactController@getDeleteContact');
 		//Review
 		Route::get('/review','ReviewController@listReview')->name("review.list.add");
+		Route::get('/review/edit/{id}', 'ReviewController@getEdit');
+		Route::post('/review/edit/{id}', 'ReviewController@postEdit');
 		Route::get('/review/xoa/{id}', 'ReviewController@getDeleteReview');
+		Route::post('/review/remove-image', 'ReviewController@postRemoveImage')->name('rating.remove.image');
 		//Slider
         Route::get('/slider','SliderController@index')->name("slider.list");
         Route::get('/slider/create','SliderController@create')->name("slider.create");

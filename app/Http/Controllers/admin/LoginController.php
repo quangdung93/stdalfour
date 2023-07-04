@@ -73,16 +73,7 @@ class LoginController extends Controller
 				Cache::put('user-is-online-' . $member->iduser, true, $expiresAt);
 				session_set_cookie_params(0, '/', '.tuvu.com');
                 setcookie("userImageId", $member->iduser, time() + 60 * 24 * 3600, '/', '.tuvu.com');
-
-                $credentials = [
-                    'username' => $request->username,
-                    'password' => $request->password,
-                    'enable' => 1
-                ];
-        
-                if (Auth::attempt($credentials)) {
-                    return redirect()->route('admin.index')->with('sucsses', lang::get('member.success_author_login'));
-                }
+                return redirect()->route('admin.index')->with('sucsses', lang::get('member.success_author_login'));
 			}else{
 				return redirect()->back()->with('warning', lang::get('member.err_author_incorrect') );
 			}

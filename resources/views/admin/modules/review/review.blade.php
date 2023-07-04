@@ -20,7 +20,7 @@
 				<div class="card-body">
 					<div class="d-flex">
                          <div>
-                              <h5 class="card-title">Danh sách đánh giá ({{ $review->total() }})</h5>
+                              <h5 class="card-title">Danh sách đánh giá ({{ $ratings->count() }})</h5>
                          </div>
                     </div>
 					
@@ -36,41 +36,43 @@
 									<th class="text-center">STT</th>
 									<th>Thông tin</th>
 									<th>Nội dung tin nhắn</th>
+									<th>Vote</th>
 									<th>Trạng thái</th>
 									<th>Thao tác</th>
 								</tr>
 							</thead>
 							<tbody>
-								<?php if($review != NULL){ ?>
-									<?php $stt = 0; foreach($review as $items){ $stt++; ?>
-										<tr>
-											<td class="text-center"><?=$stt?></td>
-											<td>
-												<p><span class="badge badge-success badge-pill"><?=$items->binhluan_name?></span></p>
-												<p>Email/Phone: <?=$items->binhluan_email?></p>
-												<p>Ngày gửi: <?=date('d/m/Y H:i',$items->binhluan_date)?></p>
-											</td>
-											<td>
-												@php
-													$product = DB::table('product')->join('product_detail', 'product.ID', '=', 'product_detail.PRODUCTID')->where('product.STATUS',1)->where('product.ID',$items->binhluan_news_id)->first();
-												@endphp
-												@if($product)
-													<p style="font-weight: 600;"><a href="{{ route('frontend.category.detail', ['urlpost' => get_url_alias('product_id='.$product->PRODUCTID)]) }}" target="_blank">{{ $product->NAME }}</a></p>
-												@endif
-												<p><?=$items->binhluan_mess?></p>
-											</td>
-											<td class="center">
-												<img src="/backend/img/anhien_{{ $items->enable }}.png" class="anhien" value="{{ $items->binhluan_id }}" />
-											</td>
-											<td class="text-nowrap check-home">
-												<a href="/dt-admin/review/xoa/<?=$items->binhluan_id?>" onclick="return confirm('Bạn có muốn xóa nội dung này không ?');" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
-											</td>
-										</tr>
-									<?php } ?>
-								<?php } ?>
+								@if($ratings)
+								@foreach($ratings as $key => $rating)
+								<tr>
+									<td class="text-center">{{ $loop->iteration }}</td>
+									<td>
+										<p><span class="badge badge-success badge-pill">{{ $rating->name_user }}</span></p>
+										<p>Phone: {{ $rating->phone_user }}</p>
+										<p>Ngày gửi: {{ \Carbon\Carbon::parse($rating->created_at)->format('Y-m-d') }}</p>
+									</td>
+									<td>
+										<p style="font-weight: 600;">
+											<a href="#" target="_blank">
+												{{ $rating->product->NAME }}
+											</a></p>
+										<p>{{ $rating->comment }}</p>
+									</td>
+									<td class="center">
+										<span class="label label-warning">{{ $rating->vote }}</span>
+									</td>
+									<td class="center">
+										{{ $rating->status }}
+									</td>
+									<td class="text-nowrap check-home">
+										<a href="/dt-admin/review/edit/{{ $rating->id }}" class="btn btn-info"><i class="fas fa-edit"></i></a>
+										<a href="/dt-admin/review/xoa/{{ $rating->id }}" onclick="return confirm('Bạn có muốn xóa nội dung này không ?');" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								@endforeach
+								@endif
 							</tbody>
 						 </table>
-						  {{ $review->appends(Request::except('page'))->links() }}
 					</div>
 				</div>
 			</div>

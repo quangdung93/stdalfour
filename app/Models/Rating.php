@@ -15,4 +15,8 @@ class Rating extends Model
         ->join('product_detail', 'product.ID', '=', 'product_detail.PRODUCTID')
         ->where('product.STATUS',1);
     }
+
+    public function replies(){
+        return $this->hasMany(RatingReply::class, 'rating_id');
+    }
 }

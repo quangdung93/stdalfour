@@ -1638,6 +1638,16 @@ a.text-link{
   padding: 0 10px;
   outline: none;
 }
+
+.rating-reply{
+  margin-left: 20px;
+  padding-left: 10px;
+  border-left: 5px solid #afafaf;
+  padding: 10px;
+  border-radius: 5px;
+  background: #e0e0e0;
+}
+
 .section-search .form .input input::-webkit-input-placeholder {
   font-weight: 400;
   font-size: 16px;

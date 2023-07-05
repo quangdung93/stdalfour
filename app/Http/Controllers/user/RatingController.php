@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\user;
 
+use App\Models\Rating;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Rating;
+use App\Models\RatingReply;
+use Illuminate\Support\Facades\Cookie;
 
 class RatingController extends Controller
 {
@@ -38,6 +40,30 @@ class RatingController extends Controller
             return response()->json([
                 'error' => 1,
                 'message' => 'Đánh giá sản phẩm thất bại!'
+            ]);
+        }
+    }
+
+    public function replyRating(Request $request){
+        $data = [
+            'rating_id' => $request->rating_id,
+            'comment' => $request->comment,
+            'created_by' => Cookie::get('userAdId') ?? ""
+        ];
+
+        $create = RatingReply::create($data);
+
+        if($create){
+            return response()->json([
+                'error' => 0,
+                'message' => 'Trả lời đánh giá thành công!',
+                'data' => $create
+            ]);
+        }
+        else{
+            return response()->json([
+                'error' => 1,
+                'message' => 'Trả lời đánh giá thất bại!'
             ]);
         }
     }

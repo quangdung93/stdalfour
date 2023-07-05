@@ -312,6 +312,12 @@
           </div>
           <div class="col-lg-6 pe-5 d-center">
             <p>{{ $rating->comment }}</p>
+
+            @if($rating->replies)
+              @foreach($rating->replies as $reply)
+                <p class="rating-reply"><b>{{ optional($reply->user)->hoten }}</b><br> {{ $reply->comment }}</p>
+              @endforeach
+            @endif
             @php
               $imagesList = explode(',', $rating->images);
             @endphp
@@ -332,14 +338,15 @@
               @endphp
 
               @if($userId)
-              <form class="form mt-4" action="#">
-                <div class="d-flex"><img class="img lazy" data-src="/img/detail/avatar1.png" alt="">
-                  <div class="input">
-                    <input type="text" placeholder="Viết câu trả lời">
-                    <button type="button"> <img class="lazy" data-src="/img/detail/icon13.png" alt=""></button>
+                <form class="form frm-reply mt-4" data-action="{{ route('frontend.rating.reply') }}">
+                  <div class="d-flex"><img class="img lazy" data-src="/img/detail/avatar1.png" alt="">
+                    <div class="input">
+                      <input type="hidden" name="rating_id" value="{{ $rating->id }}">
+                      <input type="text" class="comment" name="comment" placeholder="Viết câu trả lời">
+                      <button type="submit"> <img class="lazy" data-src="/img/detail/icon13.png" alt=""></button>
+                    </div>
                   </div>
-                </div>
-              </form>
+                </form>
               @endif
             </div>
           </div>
@@ -425,6 +432,34 @@
               method: 'POST',
               url: $(this).data('action'),
               data: `${$(this).serialize()}&images=${images}`,
+              success: function (response) {
+                  if (response.error) {
+                    alert(response.message)
+                  }
+                  else{
+                    alert(response.message);
+                    window.location.reload();
+                  }
+              }
+          });
+        }
+
+      });
+
+      $(document).on('submit', '.frm-reply', function(e){
+        e.preventDefault();
+
+        if($(this).find('.comment').val() == ""){
+          alert('Bạn chưa nhập nội dung!')
+        }
+        else{
+          $.ajax({
+              headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              },
+              method: 'POST',
+              url: $(this).data('action'),
+              data: $(this).serialize(),
               success: function (response) {
                   if (response.error) {
                     alert(response.message)

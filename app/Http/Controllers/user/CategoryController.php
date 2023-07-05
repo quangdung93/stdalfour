@@ -73,6 +73,7 @@ class CategoryController extends Controller
 					OpenGraph::addImage(env('APP_URL').$product->SEO_IMAGE, ['height' => 476, 'width' => 249]);
 
 					$ratingQuery = Rating::where('product_id', $product->ID)
+										->with('replies')
 										->where('status', 1)
 										->orderBy('id', 'DESC');
 

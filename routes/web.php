@@ -115,4 +115,5 @@ Route::group(['namespace' => 'user'], function () {
 	Route::post("/save_checkout", 'CartController@checkoutCart')->name('frontend.cart.checkout');
 	Route::get('/thanh-toan-tao-tai-khoan', 'CartController@cartReturn')->name('cart-return');
 	Route::post("/create-rating", 'RatingController@createRatingAction')->name('frontend.rating.add');
+	Route::post("/reply-rating", 'RatingController@replyRating')->name('frontend.rating.reply');
 });

@@ -50,8 +50,14 @@ a:hover{
   z-index: 6;
 }
 #header .navbar ul.navbar-nav li {
+  position: relative;
   padding: 0 20px;
 }
+
+#header .navbar ul.navbar-nav li.has-menu:hover > .sub-menu{
+  display: flex;
+} 
+
 #header .navbar ul.navbar-nav li a {
   font-size: 16px;
   color: #fff;
@@ -2852,4 +2858,26 @@ h2 strong {
   left: 0;
   right: 0;
   margin: auto;
+}
+
+.sub-menu{
+  position: absolute;
+  display: none;
+  width: 500px;
+}
+
+.sub-menu ul{
+  padding: 10px 20px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.sub-menu ul li{
+  list-style: none;
+  padding: 10px 0 !important;
+  border-bottom: 1px dashed #cacaca;
+}
+
+.sub-menu ul li a{
+  color: #333 !important
 }

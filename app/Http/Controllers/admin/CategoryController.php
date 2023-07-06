@@ -18,6 +18,7 @@ class CategoryController extends Controller
 	public function getList(Request $request){
 		$keysearch = $request->keysearch ? $request->keysearch : '';
 		$category = catModel::join('category_detail', 'category.ID', '=', 'category_detail.CATEGORYID');
+		
 		if(!empty($keysearch)){
 			$keysearch = str_replace('+', ' ', $keysearch);
 			$category->where('category_detail.NAME', 'LIKE', '%'.$keysearch.'%');

@@ -21,7 +21,9 @@
         <div class="collapse navbar-collapse align-items-center justify-content-between"><a class="navbar-brand" href="/"><img src="/img/home/logo.png" alt="logo"></a>
           <div class="float-right d-flex align-items-center">
             <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link active text-uppercase" href="{{ route('frontend.sanpham.list') }}">Sản phẩm</a></li>
+              <li class="nav-item">
+                <a class="nav-link active text-uppercase" href="{{ route('frontend.sanpham.list') }}">Sản phẩm</a>
+              </li>
               <li class="nav-item"><a class="nav-link text-uppercase" href="/thong-tin/dai-ly">đại lý</a></li>
               <li class="nav-item"><a class="nav-link text-uppercase" href="{{ route('frontend.news') }}">blog làm đp</a></li>
               <li class="nav-item"><a class="nav-link text-uppercase" href="/thong-tin/gioi-thieu">giới thiệu</a></li>
@@ -64,10 +66,38 @@
         </div>
         <div class="collapse navbar-collapse align-items-center justify-content-between"><a class="navbar-brand" href="/"><img width="100" src="/img/home/logo.png" alt="logo"></a>
           <div class="float-right d-flex align-items-center">
+            @php
+              $products = App\Http\Models\productModel::join('product_detail', 'product.ID', '=', 'product_detail.PRODUCTID')->get();
+            @endphp
             <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link active text-uppercase" href="{{ route('frontend.sanpham.list') }}">Sản phẩm</a></li>
+              <li class="nav-item has-menu">
+                <a class="nav-link active text-uppercase" href="{{ route('frontend.sanpham.list') }}">Sản phẩm</a>
+                @if($products)
+                <div class="sub-menu">
+                  <ul>
+                    @foreach($products as $product)
+                    <li><a href="{{ route('frontend.category.detail', ['urlpost' => Custom::get_url_alias('product_id='.$product->PRODUCTID)]) }}">{{ $product->NAME }}</a></li>
+                    @endforeach
+                  </ul>
+                </div>
+                @endif
+              </li>
               <li class="nav-item"><a class="nav-link text-uppercase" href="/thong-tin/dai-ly">Đại lý</a></li>
-              <li class="nav-item"><a class="nav-link text-uppercase" href="{{ route('frontend.news') }}">Blog Làm Đẹp</a></li>
+              <li class="nav-item has-menu">
+                <a class="nav-link text-uppercase" href="{{ route('frontend.news') }}">Blog Làm Đẹp</a>
+                @php
+                  $categories = App\Http\Models\catnewsModel::join('category_news_detail', 'category_news.ID', '=', 'category_news_detail.CATEGORYID')->get();
+                @endphp
+                @if($categories)
+                  <div class="sub-menu">
+                    <ul>
+                      @foreach($categories as $category)
+                      <li><a href="#">{{ $category->NAME }}</a></li>
+                      @endforeach
+                    </ul>
+                  </div>
+                @endif
+              </li>
               <li class="nav-item"><a class="nav-link text-uppercase" href="/thong-tin/gioi-thieu">Giới Thiệu</a></li>
             </ul>
             <div class="list-icon">
